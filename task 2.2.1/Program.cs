@@ -15,8 +15,7 @@ namespace task_2._2._1
         static void Main(string[] args)
         {
             Hero player = new Hero(15, 3);
-            Wolf e1 = new Wolf(75, 5);
-            Bear e2 = new Bear(45, 10);
+            List<Enemies> EnemiesList = new List<Enemies> { new Wolf(75, 5), new Bear(45, 10) };
             List<Bonuses> BonusList = new List<Bonuses> { new Coin(24, 7), new Heart(20, 4), new Coin(10, 2), new Coin(15, 8), new Heart(21, 8) };
             Console.CursorVisible = false;
             while (player.Health > 0 && BonusList.Count !=0)
@@ -26,8 +25,11 @@ namespace task_2._2._1
                 Console.WriteLine("Points {0}, HP {1}", player.Score, player.Health);
                 Visualization.DrawField();
                 Visualization.DrawHero(player.PosX, player.PosY);
-                Visualization.DrawEnemy(e1);
-                Visualization.DrawEnemy(e2);
+                foreach(Enemies enemy in EnemiesList)
+                {
+                    Visualization.DrawEnemy(enemy);
+                }
+
                 foreach(Bonuses bonus in BonusList)
                 {
                     Visualization.DrawBonus(bonus);
@@ -43,8 +45,11 @@ namespace task_2._2._1
                     }
                 }
 
-                e1.Move(player);
-                e2.Move(player);
+                foreach(Enemies enemy in EnemiesList)
+                {
+                    enemy.Move(player);
+                    enemy.Hit(player);
+                }
             }
 
             Console.Clear();

@@ -21,7 +21,7 @@ namespace task_2._2._1
         public static void DrawHero(int x, int y)
         {
             Console.SetCursorPosition(x, y);
-            Console.Write('&');
+            Console.Write('H');
         }
 
         public static void DrawEnemy(Enemies enemy)

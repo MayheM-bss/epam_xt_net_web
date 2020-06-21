@@ -19,33 +19,36 @@ namespace task_2._2._1
 
         public void Move(Hero h)
         {
-            if(h.PosX >= PosX && h.PosX != PosX)
+            if (h.PosX != PosX)
             {
-                PosX++;
+                if (h.PosX >= PosX)
+                {
+                    PosX++;
+                }
+                else
+                {
+                    PosX--;
+                }
             }
-            else 
+            else if (h.PosY != PosY)
             {
-                PosX--;
-            }
-
-            if (h.PosY >= PosY && h.PosY != PosY)
-            {
-                PosY++;
-            }
-            else
-            {
-                PosY--;
-            }
-
-            if(h.PosX == PosX && h.PosY == PosY)
-            {
-                Hit(h);
+                if (h.PosY >= PosY)
+                {
+                    PosY++;
+                }
+                else
+                {
+                    PosY--;
+                }
             }
         }
 
-        private void Hit(Hero h)
+        public void Hit(Hero h)
         {
-            h.Health -= Damage;
+            if (h.PosX == PosX && h.PosY == PosY)
+            {
+                h.Health -= Damage;
+            }
         }
     }
 }
