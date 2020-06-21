@@ -21,7 +21,7 @@ namespace task_2._2._1
         {
             if (h.PosX != PosX)
             {
-                if (h.PosX >= PosX)
+                if (h.PosX > PosX)
                 {
                     PosX++;
                 }
@@ -32,7 +32,7 @@ namespace task_2._2._1
             }
             else if (h.PosY != PosY)
             {
-                if (h.PosY >= PosY)
+                if (h.PosY > PosY)
                 {
                     PosY++;
                 }
