@@ -18,31 +18,20 @@ namespace task_2._2._1
             DrawVertical(_width, _height);
         }
 
-        public static void DrawHero(int x, int y)
+        public static void Draw(GameObject obj)
         {
-            Console.SetCursorPosition(x, y);
-            Console.Write('H');
-        }
-
-        public static void DrawEnemy(Enemies enemy)
-        {
-            Console.SetCursorPosition(enemy.PosX, enemy.PosY);
-            switch (enemy)
+            Console.SetCursorPosition(obj.PosX, obj.PosY);
+            switch (obj)
             {
+                case Hero _:
+                    Console.Write('H');
+                    break;
                 case Wolf _:
                     Console.Write('W');
                     break;
                 case Bear _:
                     Console.Write('B');
                     break;
-            }
-        }
-
-        public static void DrawBonus(Bonuses bonus)
-        {
-            Console.SetCursorPosition(bonus.PosX, bonus.PosY);
-            switch(bonus)
-            {
                 case Coin _:
                     Console.Write('@');
                     break;

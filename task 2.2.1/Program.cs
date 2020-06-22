@@ -24,15 +24,15 @@ namespace task_2._2._1
                 Console.SetCursorPosition(0, 26);
                 Console.WriteLine("Points {0}, HP {1}", player.Score, player.Health);
                 Visualization.DrawField();
-                Visualization.DrawHero(player.PosX, player.PosY);
+                Visualization.Draw(player);
                 foreach(Enemies enemy in EnemiesList)
                 {
-                    Visualization.DrawEnemy(enemy);
+                    Visualization.Draw(enemy);
                 }
 
                 foreach(Bonuses bonus in BonusList)
                 {
-                    Visualization.DrawBonus(bonus);
+                    Visualization.Draw(bonus);
                 }
 
                 player.Move();
