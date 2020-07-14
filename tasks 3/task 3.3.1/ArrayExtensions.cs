@@ -9,7 +9,7 @@ namespace task_3._3._1
     static class ArrayExtensions
     {
 
-        public static void ExtensionMethod (this int[] array, Func<int,int> action)
+        public static void ExtensionMethod<T> (this T[] array, Func<T,T> action) where T : struct
         {
             if (action == null)
             {
@@ -28,7 +28,7 @@ namespace task_3._3._1
             }
         }
 
-        public static long ExtensionSum(this int[] array)
+        public static int ExtensionSum(this int[] array)
         {
             if (array == null || array.Length == 0)
             {
@@ -52,7 +52,31 @@ namespace task_3._3._1
             }
         }
 
-        public static void ExtensionRepeat(this int[] array)
+        public static double ExtensionSum(this double[] array)
+        {
+            if (array == null || array.Length == 0)
+            {
+                throw new NullReferenceException("Array is null or empty");
+            }
+            else
+            {
+                return array.Sum();
+            }
+        }
+
+        public static double ExtensionAverage(this double[] array)
+        {
+            if (array == null || array.Length == 0)
+            {
+                throw new NullReferenceException("Array is null or empty");
+            }
+            else
+            {
+                return array.Average();
+            }
+        }
+
+        public static void ExtensionRepeat<T>(this T[] array) where T : struct
         {
             if (array == null || array.Length == 0)
             {
@@ -62,12 +86,12 @@ namespace task_3._3._1
             {
                 int repeat = 0;
                 int maxrepeat = 0;
-                int result = new int();
+                T result = default;
                 for (int i = 0; i < array.Length; i++)
                 {
                     for (int j = 0; j < array.Length; j++)
                     {
-                        if (array[i] == array[j])
+                        if (array[i].Equals(array[j]))
                         {
                             repeat++;
                         }
