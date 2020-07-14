@@ -30,38 +30,59 @@ namespace task_3._3._1
 
         public static long ExtensionSum(this int[] array)
         {
-            return array.Sum();
+            if (array == null || array.Length == 0)
+            {
+                throw new NullReferenceException("Array is null or empty");
+            }
+            else
+            {
+                return array.Sum();
+            }
         }
 
         public static double ExtensionAverage(this int[] array)
         {
-            return array.Average();
+            if (array == null || array.Length == 0)
+            {
+                throw new NullReferenceException("Array is null or empty");
+            }
+            else
+            {
+                return array.Average();
+            }
         }
 
         public static void ExtensionRepeat(this int[] array)
         {
-            int repeat = 0;
-            int maxrepeat = 0;
-            int result = new int();
-            for (int i = 0; i < array.Length; i++)
+            if (array == null || array.Length == 0)
             {
-                for (int j = 0; j < array.Length; j++)
-                {
-                    if(array[i] == array[j])
-                    {
-                        repeat++;
-                    }
-                }
-                if(repeat > maxrepeat)
-                {
-                    maxrepeat = repeat;
-                    result = array[i];
-                }
-                repeat = 0;
+                throw new NullReferenceException("Array is null or empty");
             }
-            if(maxrepeat > 0)
+            else
             {
-                Console.WriteLine(result);
+                int repeat = 0;
+                int maxrepeat = 0;
+                int result = new int();
+                for (int i = 0; i < array.Length; i++)
+                {
+                    for (int j = 0; j < array.Length; j++)
+                    {
+                        if (array[i] == array[j])
+                        {
+                            repeat++;
+                        }
+                    }
+                    if (repeat > maxrepeat)
+                    {
+                        maxrepeat = repeat;
+                        result = array[i];
+                    }
+                    repeat = 0;
+                }
+                if (maxrepeat > 0)
+                {
+                    Console.WriteLine(result);
+                }
             }
         }
 
