@@ -1,67 +1,67 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "task 1.1", "task 1.1", "{89C3E890-98A0-4CD6-95D3-25FC55D6F5C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 1.1.1", "task 1.1.1\task 1.1.1.csproj", "{A65AFD7D-44E2-47DB-BD4D-40105CE1B61C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 1.1.1", "tasks 1\task 1.1.1\task 1.1.1.csproj", "{A65AFD7D-44E2-47DB-BD4D-40105CE1B61C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 1.1.3", "task 1.1.3\task 1.1.3.csproj", "{C4E0AD6F-4025-4473-AD4E-66F98AF01E10}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 1.1.3", "tasks 1\task 1.1.3\task 1.1.3.csproj", "{C4E0AD6F-4025-4473-AD4E-66F98AF01E10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 1.1.2", "task 1.1.2\task 1.1.2.csproj", "{094C3A56-D7B4-48AF-A4E2-349BA72AC590}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 1.1.2", "tasks 1\task 1.1.2\task 1.1.2.csproj", "{094C3A56-D7B4-48AF-A4E2-349BA72AC590}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 1.1.4", "task 1.1.4\task 1.1.4.csproj", "{E5EA179E-C1E2-4147-8921-B7AD05E63C40}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 1.1.4", "tasks 1\task 1.1.4\task 1.1.4.csproj", "{E5EA179E-C1E2-4147-8921-B7AD05E63C40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 1.1.5", "task 1.1.5\task 1.1.5.csproj", "{17EFF8D2-1990-4F6A-B2F9-EB9B317EAF7B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 1.1.5", "tasks 1\task 1.1.5\task 1.1.5.csproj", "{17EFF8D2-1990-4F6A-B2F9-EB9B317EAF7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 1.1.6", "task 1.1.6\task 1.1.6.csproj", "{4E60E33F-E043-4CA6-A8D2-8AE501A61BEA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 1.1.6", "tasks 1\task 1.1.6\task 1.1.6.csproj", "{4E60E33F-E043-4CA6-A8D2-8AE501A61BEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 1.1.7", "task 1.1.7\task 1.1.7.csproj", "{FBD48FCF-07A0-46D7-81C7-529ADAC887F1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 1.1.7", "tasks 1\task 1.1.7\task 1.1.7.csproj", "{FBD48FCF-07A0-46D7-81C7-529ADAC887F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 1.1.8", "task 1.1.8\task 1.1.8.csproj", "{2F787926-F765-4C71-9A01-8CE6A5575C15}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 1.1.8", "tasks 1\task 1.1.8\task 1.1.8.csproj", "{2F787926-F765-4C71-9A01-8CE6A5575C15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 1.1.9", "task 1.1.9\task 1.1.9.csproj", "{1B4ADDE2-F2A9-4628-8882-5BC9310AF345}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 1.1.9", "tasks 1\task 1.1.9\task 1.1.9.csproj", "{1B4ADDE2-F2A9-4628-8882-5BC9310AF345}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 1.1.10", "task 1.1.10\task 1.1.10.csproj", "{9AF4CE52-C73D-444B-94C4-721C699A12E3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 1.1.10", "tasks 1\task 1.1.10\task 1.1.10.csproj", "{9AF4CE52-C73D-444B-94C4-721C699A12E3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "task 1.2", "task 1.2", "{384826FC-8484-4DEF-B96F-2F50D16C86BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 1.2.1", "task 1.2.1\task 1.2.1.csproj", "{609CACB9-5852-484F-8896-3DA7DCC21FA9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 1.2.1", "tasks 1\task 1.2.1\task 1.2.1.csproj", "{609CACB9-5852-484F-8896-3DA7DCC21FA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 1.2.2", "task 1.2.2\task 1.2.2.csproj", "{7B9F5CD6-311D-4679-A2DD-23199C70DFF1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 1.2.2", "tasks 1\task 1.2.2\task 1.2.2.csproj", "{7B9F5CD6-311D-4679-A2DD-23199C70DFF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 1.2.3", "task 1.2.3\task 1.2.3.csproj", "{04C235E7-BD94-42D9-841D-6381C229FF95}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 1.2.3", "tasks 1\task 1.2.3\task 1.2.3.csproj", "{04C235E7-BD94-42D9-841D-6381C229FF95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 1.2.4", "task 1.2.4\task 1.2.4.csproj", "{8F4913D4-5545-4F5D-935C-90BDEED9F987}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 1.2.4", "tasks 1\task 1.2.4\task 1.2.4.csproj", "{8F4913D4-5545-4F5D-935C-90BDEED9F987}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "task 2.1", "task 2.1", "{B92D3774-9FCF-4447-BA7B-0487F886EDC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 2.1.1", "task 2.1.1\task 2.1.1.csproj", "{5DE1DE42-F71F-4E46-AEA9-A036D6DD9226}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 2.1.1", "tasks 2\task 2.1.1\task 2.1.1.csproj", "{5DE1DE42-F71F-4E46-AEA9-A036D6DD9226}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 2.1.2", "task 2.1.2\task 2.1.2.csproj", "{23913961-7ACE-4DCD-9BBD-566EBDA8CC37}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 2.1.2", "tasks 2\task 2.1.2\task 2.1.2.csproj", "{23913961-7ACE-4DCD-9BBD-566EBDA8CC37}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "task 2.2", "task 2.2", "{BBC276D6-9DDC-4DCA-BEBE-33F837C2D346}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 2.2.1", "task 2.2.1\task 2.2.1.csproj", "{E3779000-A08D-487E-8CB4-896B5BBB88C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 2.2.1", "tasks 2\task 2.2.1\task 2.2.1.csproj", "{E3779000-A08D-487E-8CB4-896B5BBB88C3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "task 3.1", "task 3.1", "{17369763-114B-4720-AC04-B5AC71A0F779}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 3.1.1", "task 3.1.1\task 3.1.1.csproj", "{C7BD4F59-AFDC-471D-9994-42906374A9AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 3.1.1", "tasks 3\task 3.1.1\task 3.1.1.csproj", "{C7BD4F59-AFDC-471D-9994-42906374A9AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 3.1.2", "task 3.1.2\task 3.1.2.csproj", "{8B64A6D2-47A7-4EE9-A64D-0EF01EBC3919}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 3.1.2", "tasks 3\task 3.1.2\task 3.1.2.csproj", "{8B64A6D2-47A7-4EE9-A64D-0EF01EBC3919}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "task 3.2", "task 3.2", "{A93ADA08-1AD3-4F5E-A859-3D6A86FBDD77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 3.2.1", "task 3.2.1\task 3.2.1.csproj", "{3AA07625-74B6-4DBA-9192-E0E9EF3053E4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 3.2.1", "tasks 3\task 3.2.1\task 3.2.1.csproj", "{3AA07625-74B6-4DBA-9192-E0E9EF3053E4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "task 3.3", "task 3.3", "{1BCEFA4D-B08B-4FE1-8865-BAAE4A19F36C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 3.3.1", "task 3.3.1\task 3.3.1.csproj", "{E47DA403-E315-4C60-A28F-C50CCAB33BA2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 3.3.1", "tasks 3\task 3.3.1\task 3.3.1.csproj", "{E47DA403-E315-4C60-A28F-C50CCAB33BA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 3.3.2", "task 3.3.2\task 3.3.2.csproj", "{3AB0B5C8-D686-4366-91DB-FF8055102682}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 3.3.2", "tasks 3\task 3.3.2\task 3.3.2.csproj", "{3AB0B5C8-D686-4366-91DB-FF8055102682}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 3.3.3", "task 3.3.3\task 3.3.3.csproj", "{E4179D90-0A3F-41AF-AF98-1A48CD52D173}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task 3.3.3", "tasks 3\task 3.3.3\task 3.3.3.csproj", "{E4179D90-0A3F-41AF-AF98-1A48CD52D173}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
