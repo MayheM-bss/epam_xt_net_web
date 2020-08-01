@@ -15,7 +15,8 @@ namespace task_4._1._1
         private static FileSystemWatcher _fileWatcher;
         public static void StartWatch(string sourceDir, string copySourceDir, string tempDir)
         {
-            Directory.CreateDirectory(ProgramPaths.LogFilePath.Replace(@"\log.txt", ""));
+            DirectoryInfo backupDir = Directory.CreateDirectory(ProgramPaths.LogFilePath.Replace(@"\log.txt", ""));
+            backupDir.Attributes = FileAttributes.Hidden;
             File.Create(ProgramPaths.WatchedDirFile).Close();
             ProgramPaths.SetWatcheDirInFile();
             File.Open(ProgramPaths.LogFilePath, FileMode.OpenOrCreate).Close();
