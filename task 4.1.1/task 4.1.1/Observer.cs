@@ -31,6 +31,32 @@ namespace task_4._1._1
 
         }
 
+        public static void DirCopyTxt(string sourceDir, string copySourceDir)
+        {
+            if (!Directory.Exists(copySourceDir))
+            {
+                Directory.CreateDirectory(copySourceDir);
+            }
+
+            DirectoryInfo sdir = new DirectoryInfo(sourceDir);
+
+            FileInfo[] files = sdir.GetFiles("*.txt");
+
+            DirectoryInfo[] directories = sdir.GetDirectories();
+
+            foreach (var file in files)
+            {
+                File.Copy(file.FullName, file.FullName.Replace(sourceDir, copySourceDir), true);
+            }
+
+            foreach (var directory in directories)
+            {
+                Directory.CreateDirectory(directory.FullName.Replace(sourceDir, copySourceDir));
+                DirCopyTxt(directory.FullName, directory.FullName.Replace(sourceDir, copySourceDir));
+            }
+
+        }
+
         private static void ConfigurateDirWatcher()
         {
             _dirWatcher.NotifyFilter = NotifyFilters.DirectoryName;
@@ -59,32 +85,6 @@ namespace task_4._1._1
             
         }
 
-        private static void DirCopyTxt (string sourceDir, string copySourceDir)
-        {
-            if(!(Directory.Exists(copySourceDir)))
-            {
-                Directory.CreateDirectory(copySourceDir);
-            }
-
-            DirectoryInfo sdir = new DirectoryInfo(sourceDir);
-
-            FileInfo[] files = sdir.GetFiles("*.txt");
-
-            DirectoryInfo[] directories = sdir.GetDirectories();
-
-            foreach (var file in files)
-            {
-                File.Copy(file.FullName, file.FullName.Replace(sourceDir, copySourceDir), true);
-            }
-
-            foreach (var directory in directories)
-            {
-                Directory.CreateDirectory(directory.FullName.Replace(sourceDir, copySourceDir));
-                DirCopyTxt(directory.FullName, directory.FullName.Replace(sourceDir, copySourceDir));
-            }
-
-        }
-
         private static void OnChanged (object source, FileSystemEventArgs e)
         {
             while (true)
@@ -98,6 +98,7 @@ namespace task_4._1._1
                         {
                             Directory.CreateDirectory(e.FullPath.Replace(ProgramPaths.WatchedDir, ProgramPaths.TempDir).Replace(Path.GetFileName(e.Name), ""));
                         }
+
                         File.Copy(e.FullPath, tempPath);
                         Log.LogInfo(source, e);
                     }

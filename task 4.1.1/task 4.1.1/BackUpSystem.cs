@@ -11,8 +11,13 @@ namespace task_4._1._1
     {
         public static void StartRecovery (DateTime dateTime, string sourceDir, string sourceDirCopy)
         {
-            DeleteTxtFiles(sourceDir);
-            CopyBackUpFiles(sourceDirCopy);
+            if (Directory.Exists(sourceDir))
+            {
+                Directory.Delete(sourceDir, true);
+            }
+
+            Directory.CreateDirectory(sourceDir);
+            Observer.DirCopyTxt(sourceDirCopy, sourceDir);
             List<ChangesInfo> changesInfos = ChangesInfo.ListLogInfo(dateTime);
 
             foreach (var item in changesInfos)
@@ -24,17 +29,15 @@ namespace task_4._1._1
                         {
                             Directory.CreateDirectory(Path.GetDirectoryName(item.Path));
                         }
-                        if(File.Exists(item.Path))
-                        {
-                            File.Delete(item.Path);
-                        }
+
                         string tempFile = GetTempFile(item);
-                        File.Copy(tempFile, item.Path);
+                        File.Copy(tempFile, item.Path,true);
                         break;
+
                     case "Created":
                         if(item.Path.EndsWith(".txt"))
                         {
-                            File.Create(item.Path);
+                            File.Create(item.Path).Close();
                             break;
                         }
                         else
@@ -42,6 +45,7 @@ namespace task_4._1._1
                             Directory.CreateDirectory(item.Path);
                             break;
                         }
+
                     case "Deleted":
                         if(item.Path.EndsWith(".txt"))
                         {
@@ -49,6 +53,7 @@ namespace task_4._1._1
                             {
                                 File.Delete(item.Path);
                             }
+
                             break;
                         }
                         else
@@ -57,57 +62,32 @@ namespace task_4._1._1
                             {
                                 Directory.Delete(item.Path, true);
                             }
+
                             break;
                         }
+
                     case "Renamed":
                         if(item.Path.EndsWith(".txt"))
                         {
-                            if (File.Exists(item.OldPath))
+                            if(File.Exists(item.Path))
                             {
-                                File.Delete(item.OldPath);
+                                File.Delete(item.Path);
                             }
-                            File.Create(item.Path).Close();
-                            
+                            File.Move(item.OldPath, item.Path);
                             break;
                         }
                         else
                         {
-                            if (Directory.Exists(item.OldPath))
+                            if(Directory.Exists(item.Path))
                             {
-                                Directory.Delete(item.OldPath);
+                                Directory.Delete(item.Path, true);
                             }
-                            Directory.CreateDirectory(item.Path);
-                            
-                            break;
-                               
+                            Directory.Move(item.OldPath, item.Path);
+                            break;     
                         }
                         
                     
                 }
-            }
-        }
-
-        private static void DeleteTxtFiles(string path)
-        {
-            DirectoryInfo directory = new DirectoryInfo(path);
-            FileInfo[] files = directory.GetFiles("*.txt", SearchOption.AllDirectories);
-            foreach (var file in files)
-            {
-                file.Delete();
-            }
-        }
-
-        private static void CopyBackUpFiles (string path)
-        {
-            DirectoryInfo directory = new DirectoryInfo(path);
-            FileInfo[] files = directory.GetFiles("*.txt", SearchOption.AllDirectories);
-            foreach (var file in files)
-            {
-                if(!Directory.Exists(file.DirectoryName))
-                {
-                    Directory.CreateDirectory(file.DirectoryName);
-                }
-                File.Copy(file.FullName, file.FullName.Replace(ProgramPaths.WatchedDirCopy, ProgramPaths.WatchedDir), true);
             }
         }
 

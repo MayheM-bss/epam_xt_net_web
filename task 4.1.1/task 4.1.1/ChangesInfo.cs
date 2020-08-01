@@ -51,16 +51,16 @@ namespace task_4._1._1
         {
             string[] str = logLine.Split('$');
             string changeTime = str[0];
-            string changeType = str[2];
+            string changeType = str[1];
 
             if (changeType == "Created" || changeType == "Deleted" || changeType == "Changed")
             {
-                string path = str[1];
+                string path = str[2];
                 return new ChangesInfo(changeTime, changeType, path);
             }
             else
             {
-                string oldPath = str[1];
+                string oldPath = str[3];
                 string path = str[2];
                 return new ChangesInfo(changeTime, changeType, path, oldPath);
             }

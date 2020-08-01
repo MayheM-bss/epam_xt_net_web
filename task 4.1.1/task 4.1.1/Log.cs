@@ -19,7 +19,7 @@ namespace task_4._1._1
 
         public static void LogInfo (object source, FileSystemEventArgs e)
         {
-            string str = $"{DateTime.Now}${e.FullPath}${e.ChangeType}";
+            string str = $"{DateTime.Now}${e.ChangeType}${e.FullPath}";
             if (!HasString(str))
             {
                 using (StreamWriter writer = File.AppendText(ProgramPaths.LogFilePath))
@@ -31,7 +31,7 @@ namespace task_4._1._1
 
         public static void LogInfo (object source, RenamedEventArgs e)
         {
-            string str = $"{DateTime.Now}${e.OldFullPath}${e.FullPath}${e.ChangeType}";
+            string str = $"{DateTime.Now}${e.ChangeType}${e.FullPath}${e.OldFullPath}";
             if (!HasString(str))
             {
                 using (StreamWriter writer = File.AppendText(ProgramPaths.LogFilePath))
