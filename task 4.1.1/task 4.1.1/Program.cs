@@ -18,19 +18,13 @@ namespace task_4._1._1
             switch (choose)
             {
                 case 1:
-                    Console.WriteLine("Введите путь к папке наблюдения");
-                    try
+                    if (!Directory.Exists(ProgramPaths.WatchedDir))
                     {
-                        ProgramPaths.SetWatchedDir(Console.ReadLine());
-                        Observer.StartWatch(ProgramPaths.WatchedDir, ProgramPaths.WatchedDirCopy, ProgramPaths.TempDir);
-                        break;
+                        Directory.CreateDirectory(ProgramPaths.WatchedDir);
                     }
-                    catch (DirectoryNotFoundException e)
-                    {
-                        Console.WriteLine(e.Message);
-                        break;
-                    }
-                    
+                    Observer.StartWatch(ProgramPaths.WatchedDir, ProgramPaths.WatchedDirCopy, ProgramPaths.TempDir);
+                    break;
+            
                 case 2:
                     try
                     {
@@ -39,7 +33,6 @@ namespace task_4._1._1
                         if (date != "") 
                         {
                             DateTime dateTime = DateTime.Parse(date);
-                            ProgramPaths.SetWatchedDir(ProgramPaths.GetWatchedDirFromFile());
                             BackUpSystem.StartRecovery(dateTime, ProgramPaths.WatchedDir, ProgramPaths.WatchedDirCopy);
                         }
                         break;
@@ -56,43 +49,13 @@ namespace task_4._1._1
 
     static class ProgramPaths
     {
-        public static string WatchedDir { get; private set; } 
+        public static string WatchedDir { get; } = @"D:\task 4.1.1";
 
         public static string WatchedDirCopy { get; } = @"C:\backup\source";
 
         public static string TempDir { get; } = @"C:\backup\temp";
 
-        public static string LogFilePath { get; } = @"C:\backup\log.txt";
-
-        public static string WatchedDirFile { get; } = @"C:\backup\watcheddir.txt";
-
-        public static void SetWatchedDir(string path)
-        {
-            if(Directory.Exists(path))
-            {
-                WatchedDir = path;
-            }
-            else
-            {
-                throw new DirectoryNotFoundException($"Папка с путем \"{path}\" не существует");
-            }
-        }
-
-        public static void SetWatcheDirInFile()
-        {
-            using (StreamWriter writer = new StreamWriter(WatchedDirFile)) 
-            {
-                writer.WriteLine(WatchedDir);
-            }
-        }
-
-        public static string GetWatchedDirFromFile()
-        {
-            using (StreamReader reader = new StreamReader(WatchedDirFile))
-            {
-                return reader.ReadLine();
-            }
-        }
+        public static string LogFilePath { get; } = @"C:\backup\log.txt";  
 
     }
 }

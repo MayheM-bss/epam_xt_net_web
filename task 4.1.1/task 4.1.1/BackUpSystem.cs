@@ -69,19 +69,11 @@ namespace task_4._1._1
                     case "Renamed":
                         if(item.Path.EndsWith(".txt"))
                         {
-                            if(File.Exists(item.Path))
-                            {
-                                File.Delete(item.Path);
-                            }
                             File.Move(item.OldPath, item.Path);
                             break;
                         }
                         else
                         {
-                            if(Directory.Exists(item.Path))
-                            {
-                                Directory.Delete(item.Path, true);
-                            }
                             Directory.Move(item.OldPath, item.Path);
                             break;     
                         }

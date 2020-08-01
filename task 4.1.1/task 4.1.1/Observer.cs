@@ -17,15 +17,16 @@ namespace task_4._1._1
         {
             DirectoryInfo backupDir = Directory.CreateDirectory(ProgramPaths.LogFilePath.Replace(@"\log.txt", ""));
             backupDir.Attributes = FileAttributes.Hidden;
-            File.Create(ProgramPaths.WatchedDirFile).Close();
-            ProgramPaths.SetWatcheDirInFile();
             File.Open(ProgramPaths.LogFilePath, FileMode.OpenOrCreate).Close();
             Directory.CreateDirectory(tempDir);
             _dirWatcher = new FileSystemWatcher(sourceDir);
             _fileWatcher = new FileSystemWatcher(sourceDir, "*.txt");
             ConfigurateDirWatcher();
             ConfigurateFileWatcher();
-            DirCopyTxt(sourceDir, copySourceDir);
+            if (!Directory.Exists(copySourceDir))
+            {
+                DirCopyTxt(sourceDir, copySourceDir);
+            }
             
             Console.WriteLine("Press \'q\' to quit the sample.");
             while (Console.Read() != 'q') ;
@@ -34,10 +35,7 @@ namespace task_4._1._1
 
         public static void DirCopyTxt(string sourceDir, string copySourceDir)
         {
-            if (!Directory.Exists(copySourceDir))
-            {
-                Directory.CreateDirectory(copySourceDir);
-            }
+            Directory.CreateDirectory(copySourceDir);
 
             DirectoryInfo sdir = new DirectoryInfo(sourceDir);
 
