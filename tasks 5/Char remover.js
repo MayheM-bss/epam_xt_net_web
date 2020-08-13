@@ -2,11 +2,9 @@ function charRemover(str) {
   var separators = [" ", "\t", "?", "!", ":", ";", ",", "."];
   var words = str.split(" ");
   var repeatedChars = [];
-  var unrepeatedChars = [];
-  var result;
 
   words.forEach((word) => {
-    for (var i = 0; i <= word.length; i++) {
+    for (let i = 0; i <= word.length; i++) {
       if (
         repeatedChars.indexOf(word[i]) == -1 &&
         separators.indexOf(word[i]) == -1 &&
@@ -17,11 +15,11 @@ function charRemover(str) {
     }
   });
 
-  unrepeatedChars = str.split("").filter((symbol) => {
+  var unrepeatedChars = str.split("").filter((symbol) => {
     return repeatedChars.indexOf(symbol) == -1;
   });
 
-  result = unrepeatedChars.join("");
+  var result = unrepeatedChars.join("");
   console.log(result);
   return result;
 }

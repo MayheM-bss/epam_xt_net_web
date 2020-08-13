@@ -1,9 +1,8 @@
 function mathCalculator(str) {
-  var result;
   var regex = /(\d+\.\d+)|(\d+)|(\+|\-|\/|\*|\=)/g;
   var items = str.match(regex);
-  result = parseFloat(items[0]);
-  for (var i = 1; i <= items.length; i++) {
+  var result = parseFloat(items[0]);
+  for (let i = 1; i <= items.length; i++) {
     switch (items[i]) {
       case "+":
         {
