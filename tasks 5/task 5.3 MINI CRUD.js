@@ -5,7 +5,7 @@ class Service {
   }
 
   add(obj) {
-    if (typeof obj === "object") {
+    if (checkParams("", obj)) {
       this.id++;
       obj.id = "id" + this.id;
       this.items.push(obj);
@@ -13,7 +13,7 @@ class Service {
   }
 
   getById(id) {
-    if (typeof id === "string") {
+    if (checkParams(id)) {
       return this.searchById(id);
     }
   }
@@ -23,7 +23,7 @@ class Service {
   }
 
   deletedById(id) {
-    if (typeof id === "string") {
+    if (checkParams(id)) {
       let temp = this.searchById(id);
       if (temp != null) {
         this.items.splice(this.items.indexOf(temp), 1);
@@ -33,7 +33,7 @@ class Service {
   }
 
   replaceById(id, obj) {
-    if (typeof id === "string" && typeof obj === "object") {
+    if (checkParams(id, obj)) {
       let temp = this.searchById(id);
       if (temp != null) {
         obj.id = id;
@@ -43,7 +43,7 @@ class Service {
   }
 
   updateById(id, obj) {
-    if (typeof id === "string" && typeof obj === "object") {
+    if (checkParams(id, obj)) {
       let temp = this.searchById(id);
       if (temp != null) {
         for (let prop in obj) {
@@ -60,5 +60,9 @@ class Service {
       }
       return null;
     }
+  }
+
+  checkParams(id, obj = {}) {
+    return typeof id == "string" && typeof obj == "object";
   }
 }
