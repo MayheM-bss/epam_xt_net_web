@@ -23,7 +23,7 @@ class Service {
     return this.items;
   }
 
-  deletedById(id) {
+  deleteById(id) {
     if (this.checkId(id)) {
       let temp = this.searchById(id);
       if (temp != null) {

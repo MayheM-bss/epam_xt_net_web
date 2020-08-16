@@ -18,5 +18,5 @@ storage.updateById("id1", {
   qwe: 7456,
 });
 console.log(storage);
-console.log(storage.deletedById("id1"));
+console.log(storage.deleteById("id1"));
 console.log(storage);
