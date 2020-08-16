@@ -64,7 +64,7 @@ class Service {
   }
 
   checkId(id) {
-    return typeof id === "string" && id != null;
+    return typeof id === "string";
   }
 
   checkObj(obj) {
