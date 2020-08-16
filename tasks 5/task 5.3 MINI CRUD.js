@@ -1,3 +1,4 @@
+"use strict";
 class Service {
   constructor() {
     this.items = new Array();
@@ -70,3 +71,5 @@ class Service {
     return typeof obj === "object" && obj != null;
   }
 }
+
+module.exports = Service;
