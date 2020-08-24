@@ -6,49 +6,50 @@
   font-size: 16px;
 }
 body {
-  margin-left: 10px;
-  margin-top: 10px;
+  margin: 10px 0px 0px 10px;
 }
 form {
-  width: 500px;
-  border: 2px groove blue;
-  background-color: blue;
+  width: 450px;
+  border: 4px solid #0075b2;
+  background-color: #0690cf;
 }
 .reg {
-  padding: 15px;
+  margin: 20px 20px 10px 20px;
   font-weight: normal;
-  font-size: 24px;
+  font-size: 28px;
 }
 .email {
-  padding: 15px;
-  padding-top: 35px;
+  margin: 35px 20px 20px 20px;
 }
 #email {
-  margin-top: 5px;
-  width: 303px;
+  margin-top: 3px;
+  width: 310px;
+  color: black;
 }
 #password {
-  margin-top: 5px;
+  margin-top: 3px;
   width: 140px;
+  color: black;
 }
-#repeated_password {
-  margin-top: 5px;
+#repeat_password {
+  margin-top: 3px;
   width: 140px;
+  color: black;
 }
 .password {
-  padding: 15px 15px;
+  margin: 0px 20px;
   display: inline-block;
 }
-.repeated_password {
+.repeat_password {
   display: inline-block;
 }
 
 .btn {
-  font-size: 14px;
-  margin: 20px 15px;
-  padding: 4px 6px;
+  font-size: 12px;
+  margin: 35px 20px 20px 20px;
+  padding: 5px 10px;
   border: 0px;
   border-radius: 0px;
-  background-color: yellow;
+  background-color: #ffdf7f;
   color: black;
 }

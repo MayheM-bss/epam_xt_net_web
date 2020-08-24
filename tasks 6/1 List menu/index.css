@@ -1,12 +1,12 @@
 * {
   padding: 5px 5px;
-  color: #a50000;
+  color: #9c0000;
 }
 .menu {
   width: 200px;
   list-style: none;
-  background-color: #ffd440;
+  background-color: #f9e497;
   border: 1px outset #000;
   border-radius: 10px;
-  box-shadow: 5px 5px #660000;
+  box-shadow: 5px 5px #880000;
 }
