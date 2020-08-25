@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 body {
   margin-top: 20px;
@@ -31,7 +32,7 @@ body {
 img {
   width: 50px;
   height: 50px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 h1 {
@@ -44,12 +45,18 @@ p {
   text-align: center;
   font-size: 14px;
 }
-button {
+
+.btn {
+  text-align: center;
   margin-top: 10px;
-  font-size: 12px;
+  margin-bottom: 4px;
+}
+a {
+  text-decoration-line: none;
+  font-size: 14px;
   background-color: #de592e;
   color: white;
-  padding: 5px 7px;
+  padding: 3px 9px;
   border: none;
   border-radius: 2px;
 }
