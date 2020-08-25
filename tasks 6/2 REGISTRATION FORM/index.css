@@ -21,20 +21,16 @@ form {
 .email {
   margin: 35px 20px 20px 20px;
 }
-#email {
+#email,
+#password,
+#repeat_password {
   margin-top: 3px;
   width: 310px;
   color: black;
 }
-#password {
-  margin-top: 3px;
-  width: 140px;
-  color: black;
-}
+#password,
 #repeat_password {
-  margin-top: 3px;
   width: 140px;
-  color: black;
 }
 .password {
   margin: 0px 20px;
