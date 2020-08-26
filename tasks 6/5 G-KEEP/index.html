@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <title>G-KEEP</title>
+  </head>
+  <body>
+    <header>
+      <div class="searchField">
+        <img id="search" src="img/search.png" />
+        <input
+          id="searchText"
+          type="text"
+          maxlength="256"
+          placeholder="Поиск"
+        />
+      </div>
+    </header>
+    <div class="disable" id="addForm">
+      <div class="noteForm">
+        <input type="text" placeholder="Введите заголовок" id="noteName" />
+        <textarea placeholder="Текст заметки" id="noteText"></textarea>
+        <div id="create">Создать</div>
+        <div id="close">Закрыть</div>
+      </div>
+    </div>
+    <div class="disable" id="changeForm">
+      <div class="noteForm">
+        <input type="text" placeholder="Введите заголовок" id="noteName" />
+        <textarea placeholder="Текст заметки" id="noteText"></textarea>
+        <hr />
+        <div id="create">Сохранить</div>
+        <div id="close">Закрыть</div>
+      </div>
+    </div>
+    <div class="add" id="addNote">+</div>
+  </body>
+</html>
