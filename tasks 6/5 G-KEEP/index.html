@@ -6,34 +6,64 @@
     <title>G-KEEP</title>
   </head>
   <body>
-    <header>
-      <div class="searchField">
-        <img id="search" src="img/search.png" />
-        <input
-          id="searchText"
-          type="text"
-          maxlength="256"
-          placeholder="Поиск"
-        />
+      <header>
+        <div class="searchField">
+          <img id="search" src="img/search.png" />
+          <input 
+            id="searchText"
+            type="text"
+            maxlength="256"
+            placeholder="Поиск"
+          />
+        </div>
+      </header>
+      <div id="notes"></div>
+      <div class="disable" id="addForm">
+        <div class="noteForm">
+          <div class="heading">
+            <input
+              autocomplete="off"
+              type="text"
+              placeholder="Введите заголовок"
+              id="noteNameCreate"
+            />
+          </div>
+          <div class="textNote">
+            <textarea
+              placeholder="Текст заметки"
+              id="noteTextCreate"
+            ></textarea>
+          </div>
+          <div class="buttons">
+            <button class="btn" id="create">Создать</button><button class="btn" id="addFormClose">Закрыть</button>
+          </div>
+        </div>
       </div>
-    </header>
-    <div class="disable" id="addForm">
-      <div class="noteForm">
-        <input type="text" placeholder="Введите заголовок" id="noteName" />
-        <textarea placeholder="Текст заметки" id="noteText"></textarea>
-        <div id="create">Создать</div>
-        <div id="close">Закрыть</div>
+      <div class="disable" id="changeForm">
+        <div class="noteForm">
+          <div class="heading">
+            <input
+              autocomplete="off"
+              type="text"
+              placeholder="Введите заголовок"
+              id="noteNameChange"
+            />
+          </div>
+          <div class="textNote">
+            <textarea
+              placeholder="Текст заметки"
+              id="noteTextChange"
+            ></textarea>
+          </div>
+          <hr>
+          <div class="buttons">
+            <button class="btn" id="save">Сохранить</button><button class="btn" id="close">Закрыть</button>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="disable" id="changeForm">
-      <div class="noteForm">
-        <input type="text" placeholder="Введите заголовок" id="noteName" />
-        <textarea placeholder="Текст заметки" id="noteText"></textarea>
-        <hr />
-        <div id="create">Сохранить</div>
-        <div id="close">Закрыть</div>
-      </div>
-    </div>
-    <div class="add" id="addNote">+</div>
+    <button class="add" id="addNote">+</button>
+    <script src="js/script.js" type='module'></script>
+    <script src='js/storage.js' type='module'></script>
   </body>
 </html>
