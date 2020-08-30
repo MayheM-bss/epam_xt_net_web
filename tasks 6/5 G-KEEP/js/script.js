@@ -11,43 +11,47 @@ let storage = new Service();
 
 let changeNoteId;
 
-let addButton = document.getElementById("addNote");
-addButton.addEventListener("click", openCreateWindow);
-let closeAddFormButton = document.getElementById("addFormClose");
-closeAddFormButton.addEventListener("click", closeCreateWindow);
-let createAddFormButton = document.getElementById("create");
-createAddFormButton.addEventListener("click", createNote);
-let closeChangeFormButton = document.getElementById("close");
-closeChangeFormButton.addEventListener("click", closeChangeWindow);
-let saveChangeFormButton = document.getElementById("save");
-saveChangeFormButton.addEventListener("click", changeNote);
+let notes = document.getElementById("notes");
 
-function openCreateWindow() {
-  let elem = document.getElementById("addForm");
-  formDisplay(elem, true);
-}
+let buttonAdd = document.getElementById("addNote");
+buttonAdd.addEventListener("click", showModalWindow);
 
-function closeCreateWindow() {
-  let elem = document.getElementById("addForm");
-  formDisplay(elem, false);
-  clearCreateForm();
-}
+let buttonCloseAddForm = document.getElementById("addFormClose");
+buttonCloseAddForm.addEventListener("click", showModalWindow);
 
-function closeChangeWindow() {
-  let elem = document.getElementById("changeForm");
-  formDisplay(elem, false);
+let buttonCreateAddForm = document.getElementById("create");
+buttonCreateAddForm.addEventListener("click", createNote);
+
+let buttonCloseChangeForm = document.getElementById("close");
+buttonCloseChangeForm.addEventListener("click", showModalWindow);
+
+let buttonSaveChangeForm = document.getElementById("save");
+buttonSaveChangeForm.addEventListener("click", changeNote);
+
+function showModalWindow() {
+  switch (event.target.id) {
+    case "addNote":
+      formDisplay(document.getElementById("addForm"), true);
+      break;
+    case "create":
+    case "addFormClose":
+      formDisplay(document.getElementById("addForm"), false);
+      clearCreateForm();
+      break;
+    case "close":
+      formDisplay(document.getElementById("changeForm"), false);
+      break;
+  }
 }
 
 function createNote() {
-  let headingField = document.getElementById("noteNameCreate");
-  let heading = headingField.value;
-  let textField = document.getElementById("noteTextCreate");
-  let text = textField.value;
+  let heading = document.getElementById("noteHeadCreate").value;
+  let text = document.getElementById("noteTextCreate").textContent;
   if (heading === "" && text === "") {
     alert("Невозможно создать пустую заметку");
   } else {
     let note = new Note(heading, text);
-    closeCreateWindow();
+    showModalWindow();
     storage.add(note);
     printNote(note);
     let noteId = document.getElementById(note.id);
@@ -56,8 +60,8 @@ function createNote() {
 }
 
 function changeNote() {
-  let heading = document.getElementById("noteNameChange").value;
-  let text = document.getElementById("noteTextChange").value;
+  let heading = document.getElementById("noteHeadChange").value;
+  let text = document.getElementById("noteTextChange").textContent;
   if (heading === "" && text === "") {
     alert("Заметка не может быть пустой");
   } else {
@@ -66,8 +70,7 @@ function changeNote() {
     note.querySelector(".noteHead").textContent = heading;
     note.querySelector(".noteText").textContent = text;
     notes.prepend(note);
-    let elem = document.getElementById("changeForm");
-    formDisplay(elem, false);
+    formDisplay(document.getElementById("changeForm"), false);
   }
 }
 
@@ -75,20 +78,18 @@ function openChangeWindow() {
   if (event.target.id != "delete") {
     changeNoteId = this.id;
     let note = storage.getById(changeNoteId);
-    document.getElementById("noteNameChange").value = note.heading;
-    document.getElementById("noteTextChange").value = note.text;
-    let elem = document.getElementById("changeForm");
-    formDisplay(elem, true);
+    document.getElementById("noteHeadChange").value = note.heading;
+    document.getElementById("noteTextChange").textContent = note.text;
+    formDisplay(document.getElementById("changeForm"), true);
   }
 }
 
 function clearCreateForm() {
-  document.getElementById("noteNameCreate").value = "";
-  document.getElementById("noteTextCreate").value = "";
+  document.getElementById("noteHeadCreate").value = "";
+  document.getElementById("noteTextCreate").textContent = "";
 }
 
 function printNote(note) {
-  let notes = document.getElementById("notes");
   let divnote = document.createElement("div");
   divnote.classList.add("note");
   divnote.id = note.id;
@@ -98,26 +99,25 @@ function printNote(note) {
   let noteText = document.createElement("p");
   noteText.classList.add("noteText");
   noteText.innerHTML = note.text;
-  let deleteButton = document.createElement("div");
-  deleteButton.innerHTML =
+  let buttonDelete = document.createElement("div");
+  buttonDelete.innerHTML =
     '<img id="delete" src="img/trash.png" alt="Удалить заметку" />';
-  deleteButton.classList.add("deleteButton");
+  buttonDelete.classList.add("deleteButton");
   divnote.append(noteHeading);
   divnote.append(noteText);
-  divnote.append(deleteButton);
+  divnote.append(buttonDelete);
   notes.prepend(divnote);
-  let deleteNote = document.getElementById("delete");
-  deleteNote.addEventListener("click", () => {
-    deleteNoteFunction(note.id);
+  let buttonDeleteNote = document.getElementById("delete");
+  buttonDeleteNote.addEventListener("click", () => {
+    deleteNote(note.id);
   });
 }
 
-function deleteNoteFunction(id) {
+function deleteNote(id) {
   let choice = confirm("Удалить заметку?");
   if (choice) {
     document.getElementById(id).remove();
     storage.deleteById(id);
-    console.log(storage);
   }
 }
 
