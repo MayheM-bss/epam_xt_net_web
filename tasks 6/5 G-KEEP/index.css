@@ -64,6 +64,7 @@ header {
   border-radius: 15px;
   box-shadow: 0 5px 5px #d3d3d3, 2px 0 5px #d3d3d3, 0 -2px 5px #d3d3d3,
     -5px 0 5px #d3d3d3;
+  box-sizing: border-box;
 }
 
 .heading,
@@ -119,6 +120,11 @@ header {
 
 .noteHead {
   font-weight: bold;
+}
+
+.noteText,
+.noteHead {
+  word-wrap: break-word;
 }
 
 .deleteButton {
