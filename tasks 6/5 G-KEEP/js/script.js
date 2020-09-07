@@ -46,7 +46,7 @@ function showModalWindow() {
 
 function createNote() {
   let heading = document.getElementById("noteHeadCreate").value;
-  let text = document.getElementById("noteTextCreate").textContent;
+  let text = document.getElementById("noteTextCreate").innerHTML;
   if (heading === "" && text === "") {
     alert("Невозможно создать пустую заметку");
   } else {
@@ -61,14 +61,14 @@ function createNote() {
 
 function changeNote() {
   let heading = document.getElementById("noteHeadChange").value;
-  let text = document.getElementById("noteTextChange").textContent;
+  let text = document.getElementById("noteTextChange").innerHTML;
   if (heading === "" && text === "") {
     alert("Заметка не может быть пустой");
   } else {
     storage.replaceById(changeNoteId, new Note(heading, text));
     let note = document.getElementById(changeNoteId);
-    note.querySelector(".noteHead").textContent = heading;
-    note.querySelector(".noteText").textContent = text;
+    note.querySelector(".noteHead").innerHTML = heading;
+    note.querySelector(".noteText").innerHTML = text;
     notes.prepend(note);
     formDisplay(document.getElementById("changeForm"), false);
   }
@@ -79,14 +79,14 @@ function openChangeWindow() {
     changeNoteId = this.id;
     let note = storage.getById(changeNoteId);
     document.getElementById("noteHeadChange").value = note.heading;
-    document.getElementById("noteTextChange").textContent = note.text;
+    document.getElementById("noteTextChange").innerHTML = note.text;
     formDisplay(document.getElementById("changeForm"), true);
   }
 }
 
 function clearCreateForm() {
   document.getElementById("noteHeadCreate").value = "";
-  document.getElementById("noteTextCreate").textContent = "";
+  document.getElementById("noteTextCreate").innerHTML = "";
 }
 
 function printNote(note) {

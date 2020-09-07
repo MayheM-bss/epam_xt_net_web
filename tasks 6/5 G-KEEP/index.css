@@ -82,6 +82,7 @@ header {
 .textarea {
   min-height: 100px;
   font-size: 14px;
+  white-space: pre-wrap;
 }
 
 .textarea[contentEditable="true"]:empty:not(:focus):before {
@@ -126,6 +127,7 @@ header {
 .noteText,
 .noteHead {
   word-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 .deleteButton {
