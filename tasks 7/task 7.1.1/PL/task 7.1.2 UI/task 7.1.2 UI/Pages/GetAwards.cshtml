@@ -1,0 +1,9 @@
+﻿@using task_7._1._2_UI
+@using Task7._1._1.Entities;
+@{
+    Dependencies.Awards.Clear();
+    Dependencies.Awards.AddRange(Dependencies.AwardManager.GetAll());
+    Response.Redirect("~/");
+}
+
+

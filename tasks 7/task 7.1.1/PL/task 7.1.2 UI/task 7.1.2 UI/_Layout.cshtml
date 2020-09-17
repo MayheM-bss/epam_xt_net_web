@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/bootstrap.css"/>
+    <title>@Page["Title"]</title>
+</head>
+<body class="p-3">
+    <header class="bg-primary">
+    </header>
+    <section>
+        @RenderBody()
+    </section>
+    <footer></footer>
+    <script src="~/Scripts/jquery-3.0.0.slim.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script type="text/javascript">
+        $("#listUsers").click(function () {
+            location.href = "/Pages/GetUsers.cshtml";
+        })
+    </script>
+    <script type="text/javascript">
+        $("#listAwards").click(function () {
+            location.href = "/Pages/GetAwards.cshtml";
+        })
+    </script>
+</body>
+</html>

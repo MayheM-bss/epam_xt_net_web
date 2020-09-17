@@ -8,12 +8,13 @@ using Task7._1._1.Entities;
 using Newtonsoft.Json;
 using System.Security.Policy;
 using System.IO;
+using System.Web.Configuration;
 
 namespace Task7._1._1.DAL
 {
     public class AwardDAO : IAwardDAO
     {
-        private static readonly string _directory = Environment.CurrentDirectory + @"\Data\Awards\";
+        private static readonly string _directory = WebConfigurationManager.AppSettings.Get("pathToAwardJSON");
         private static readonly JsonSerializerSettings _settings = new JsonSerializerSettings
         {
             ReferenceLoopHandling = ReferenceLoopHandling.Ignore,

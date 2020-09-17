@@ -1,0 +1,7 @@
+﻿@using task_7._1._2_UI
+@using Task7._1._1.Entities;
+@{
+    Dependencies.Users.Clear();
+    Dependencies.Users.AddRange(Dependencies.UserManager.GetAll());
+    Response.Redirect("~/");
+}

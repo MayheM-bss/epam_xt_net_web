@@ -8,12 +8,13 @@ using Task7._1._1.Entities;
 using Newtonsoft.Json;
 using System.IO;
 using Newtonsoft.Json.Converters;
+using System.Web.Configuration;
 
 namespace Task7._1._1.DAL
 {
     public class UserDAO : IUserDAO
     {
-        private static readonly string _directory = Environment.CurrentDirectory + @"\Data\Users\";
+        private static readonly string _directory = WebConfigurationManager.AppSettings.Get("pathToUserJSON");
         private static readonly JsonSerializerSettings _settings = new JsonSerializerSettings 
             {
                     ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
@@ -66,7 +67,7 @@ namespace Task7._1._1.DAL
 
         private static string GetPath(Guid id)
         {
-            return _directory + "User" + id + ".json";
+            return _directory + "User_" + id + ".json";
         }
 
 

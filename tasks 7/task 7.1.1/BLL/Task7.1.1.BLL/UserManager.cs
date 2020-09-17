@@ -32,11 +32,11 @@ namespace Task7._1._1.BLL
             }
         }
 
-        public void Create(string name, DateTime dateOfBirth, int age)
+        public void Create(string name, DateTime dateOfBirth)
         {
-            if (age > 0 && !string.IsNullOrWhiteSpace(name))
+            if (!string.IsNullOrWhiteSpace(name))
             {
-                _userDAO.Save(new User(name, dateOfBirth, age));
+                _userDAO.Save(new User(name, dateOfBirth));
             }
         }
 

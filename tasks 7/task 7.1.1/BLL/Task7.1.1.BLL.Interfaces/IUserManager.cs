@@ -10,7 +10,7 @@ namespace Task7._1._1.BLL.Interfaces
     public interface IUserManager
     {
         void AddAward(Guid userId, Guid awardId);
-        void Create(string name, DateTime dateOfBirth, int age);
+        void Create(string name, DateTime dateOfBirth);
         void DeleteById(Guid id);
         IEnumerable<User> GetAll();
     }

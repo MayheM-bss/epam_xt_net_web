@@ -1,0 +1,51 @@
+﻿@using Task7._1._1.Entities;
+@using task_7._1._2_UI;
+@{
+    Layout = "~/_Layout.cshtml";
+    Page["Title"] = "Index";
+
+}
+
+<div class="alert alert-primary" role="alert">
+    Привет, выбери действие
+</div>
+<div class="p-3">
+    <h5 class="w-100 mb-3">Список пользователей:</h5>
+    <div class="mb-3">
+        @foreach (var item in Dependencies.Users)
+        {
+            <p><b>Имя пользователя:</b> @item.Name</p>
+            <p><b>ID:</b> @item.ID</p>
+            <p><b>Дата рождения:</b> @item.BirthDay.ToString("dd.MM.yyyy")</p>
+            <p><b>Возраст:</b> @item.Age</p>
+            <p><b>Полученные награды:</b> 
+            @foreach (var award in item.Awards)
+            {
+                @award.Title
+            }</p>
+            <hr />
+        }
+    </div>
+    <button id="listUsers" type="button" class="btn btn-primary">Обновить список пользователей</button>
+</div>
+<div class="p-3">
+    <h5 class="w-100 mb-3">Список наград:</h5>
+    <div class="mb-3">
+        @foreach (var item in Dependencies.Awards)
+        {
+            <p><b>Название награды:</b> @item.Title</p>
+            <p><b>ID:</b> @item.ID</p>
+        }
+    </div>
+    <button id="listAwards" type="button" class="btn btn-primary">Обновить список наград</button>
+</div>
+<div class="mt-3">
+    <button type="button" class="btn btn-dark" data-target="#addUser" data-toggle="modal">Добавить пользователя</button>
+    <button type="button" class="btn btn-dark" data-target="#addAward" data-toggle="modal">Добавить награду</button>
+    <button type="button" class="btn btn-dark" data-target="#deleteUser" data-toggle="modal">Удалить пользователя</button>
+    <button type="button" class="btn btn-dark" data-target="#deleteAward" data-toggle="modal">Удалить награду</button>
+</div>
+@RenderPage("~/Pages/Partial/_addUserModal.cshtml")
+@RenderPage("~/Pages/Partial/_addAwardModal.cshtml")
+@RenderPage("~/Pages/Partial/_deleteUserModal.cshtml")
+@RenderPage("~/Pages/Partial/_deleteAwardModal.cshtml")

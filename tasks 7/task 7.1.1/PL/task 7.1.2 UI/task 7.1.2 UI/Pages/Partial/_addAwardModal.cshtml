@@ -1,0 +1,27 @@
+﻿@using task_7._1._2_UI;
+@{
+    Layout = "~/Pages/_LayoutModal.cshtml";
+    Page["id"] = "addAward";
+
+    if (IsPost)
+    {
+        Dependencies.AwardManager.Create(Request["AwardTitle"]);
+    }
+}
+<div class="modal-header">
+    <h5 class="modal-title" id="ModalLabel">Создание награды</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<form action="/" method="post">
+    <div class="modal-body">
+        <label for="AwardTitle">Введите название</label>
+        <input id="AwardTitle" name="AwardTitle" class="form-control" type="text" placeholder="" required pattern="^[^\s]+(\s.*)?$">
+    </div>
+    <div class="modal-footer">
+        <button id="CloseBtn" type="reset" class="btn btn-secondary" data-dismiss="modal">Закрыть форму</button>
+        <button type="submit" class="btn btn-primary">Создать награду</button>
+    </div>
+</form>
+

@@ -24,11 +24,11 @@ namespace Task7._1._1.Entities
             Awards = new List<Award>();
         }
 
-        public User(string name, DateTime date, int age) : this()
+        public User(string name, DateTime date) : this()
         {
             Name = name;
             BirthDay = date;
-            Age = age;
+            Age = DateTime.Now.DayOfYear > BirthDay.DayOfYear ? DateTime.Now.Year - BirthDay.Year : DateTime.Now.Year - BirthDay.Year - 1;
         }
 
         [JsonConstructor]

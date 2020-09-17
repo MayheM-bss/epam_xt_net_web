@@ -12,12 +12,12 @@ namespace Console.PL
     {
         static void Main()
         {
-            IUserManager Userq  = DependencyResolver.UserManager;
-            IAwardManager Award = DependencyResolver.AwardManager;
-            //Userq.Create("Alex", DateTime.Parse("25.12.1998"), 25);
-            //Userq.Create("John", DateTime.Parse("25.12.1998"), 25);
-            //Userq.Create("Gustav", DateTime.Parse("25.12.1998"), 25);
-            //Userq.Create("Rust", DateTime.Parse("25.12.1998"), 25);
+            IUserManager qwe  = DependencyResolver.UserManager;
+            IAwardManager wqe = DependencyResolver.AwardManager;
+            //Userq.Create("Alex", DateTime.Parse("25.12.1998"));
+            //Userq.Create("John", DateTime.Parse("25.12.1998"));
+            //Userq.Create("Gustav", DateTime.Parse("25.12.1998"));
+            //Userq.Create("Rust", DateTime.Parse("25.12.1998"));
             //Award.Create("Best of the best");
             //Award.Create("Strongest");
             //Award.Create("Fastest");

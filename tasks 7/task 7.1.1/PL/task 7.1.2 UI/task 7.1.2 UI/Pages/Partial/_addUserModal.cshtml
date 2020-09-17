@@ -1,0 +1,33 @@
+﻿@using task_7._1._2_UI;
+@{
+    Layout = "~/Pages/_LayoutModal.cshtml";
+    Page["id"] = "addUser";
+
+    if (IsPost)
+    {
+        var name = Request["UserName"];
+        var age = Request["UserAge"];
+        var date = Request["UserBirth"];
+        DateTime.TryParse(date, out DateTime BirthDay);
+        Dependencies.UserManager.Create(name, BirthDay);
+    }
+}
+<div class="modal-header">
+    <h5 class="modal-title" id="ModalLabel">Создание пользователя</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<form action="/" method="post">
+    <div class="modal-body">
+        <label for="UserName">Введите имя</label>
+        <input id="UserName" name="UserName" class="form-control" type="text" placeholder="" required pattern="^[^\s]+(\s.*)?$">
+        <label for="UserBirth">Введите дату рождения</label>
+        <input id="UserBirth" name="UserBirth" class="form-control" type="date" placeholder="" min="1950-01-01" max="2020-01-01" required>
+    </div>
+    <div class="modal-footer">
+        <button id="CloseBtn" type="reset" class="btn btn-secondary" data-dismiss="modal">Закрыть форму</button>
+        <button type="submit" class="btn btn-primary">Создать пользователя</button>
+    </div>
+</form>
+

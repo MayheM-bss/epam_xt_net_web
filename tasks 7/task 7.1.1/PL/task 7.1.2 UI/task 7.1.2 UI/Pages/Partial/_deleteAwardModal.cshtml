@@ -1,0 +1,32 @@
+﻿@using task_7._1._2_UI
+@{
+    Layout = "~/Pages/_LayoutModal.cshtml";
+    Page["id"] = "deleteAward";
+
+    if (IsPost)
+    {
+        var id = Request["AwardID"];
+        Guid.TryParse(id, out Guid guid);
+        Dependencies.AwardManager.DeleteById(guid);
+    }
+}
+<div class="modal-header">
+    <h5 class="modal-title" id="ModalLabel">Удаление награды</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<form action="/" method="post">
+    <div class="modal-body">
+        <label for="AwardID">Введите ID награды</label>
+        <input id="AwardID" name="AwardID" class="form-control" type="text" placeholder="" required pattern="(^[0-9a-zA-Z]{8}-([0-9a-zA-Z]{4}-){3}[0-9a-zA-Z]{12}?$)">
+        <small class="form-text text-muted">
+            Пример ID: @Guid.NewGuid()
+        </small>
+    </div>
+    <div class="modal-footer">
+        <button id="CloseBtn" type="reset" class="btn btn-secondary" data-dismiss="modal">Закрыть форму</button>
+        <button type="submit" class="btn btn-primary">Удалить награду</button>
+    </div>
+</form>
+
