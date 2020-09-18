@@ -1,14 +1,6 @@
-﻿@using task_7._1._2_UI;
-@{
+﻿@{
     Layout = "~/Pages/_LayoutModal.cshtml";
     Page["id"] = "deleteUser";
-
-    if (IsPost)
-    {
-        var id = Request["UserID"];
-        Guid.TryParse(id, out Guid guid);
-        Dependencies.UserManager.DeleteById(guid);
-    }
 }
 <div class="modal-header">
     <h5 class="modal-title" id="ModalLabel">Удаление пользователя</h5>
@@ -16,7 +8,7 @@
         <span aria-hidden="true">&times;</span>
     </button>
 </div>
-<form action="/" method="post">
+<form action="~/Pages/DeleteUser.cshtml" method="post">
     <div class="modal-body">
         <label for="UserID">Введите ID пользователя</label>
         <input id="UserID" name="UserID" class="form-control" type="text" placeholder="" required pattern="(^[0-9a-zA-Z]{8}-([0-9a-zA-Z]{4}-){3}[0-9a-zA-Z]{12}?$)">
@@ -25,8 +17,8 @@
         </small>
     </div>
     <div class="modal-footer">
-        <button id="CloseBtn" type="reset" class="btn btn-secondary" data-dismiss="modal">Закрыть форму</button>
-        <button type="submit" class="btn btn-primary">Удалить награду</button>
+        <button class="btn btn-secondary" data-dismiss="modal">Закрыть форму</button>
+        <button type="submit" class="btn btn-primary">Удалить пользователя</button>
     </div>
 </form>
 

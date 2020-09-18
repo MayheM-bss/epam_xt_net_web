@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html>
+﻿  
+<!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="~/Content/bootstrap.css"/>
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
     <title>@Page["Title"]</title>
 </head>
 <body class="p-3">
@@ -17,13 +18,19 @@
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/popper.min.js"></script>
     <script type="text/javascript">
-        $("#listUsers").click(function () {
-            location.href = "/Pages/GetUsers.cshtml";
-        })
-    </script>
-    <script type="text/javascript">
-        $("#listAwards").click(function () {
-            location.href = "/Pages/GetAwards.cshtml";
+        $("#DeleteForm").on('submit', function (event) {
+            event.preventDefault();
+            var form = document.forms.DeleteAward;
+            var users = document.getElementById(form.elements.AwardID.value).textContent;
+            console.log(users);
+            if (users.trim() == "") {
+                form.submit();
+            }
+            else {
+                if (confirm("Удалить эту награду у всех пользователей?")) {
+                    form.submit();
+                }
+            }
         })
     </script>
 </body>

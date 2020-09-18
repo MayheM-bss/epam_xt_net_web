@@ -1,0 +1,9 @@
+﻿@using task_7._1._2_UI;
+@{
+    if (IsPost)
+    {
+        Dependencies.AwardManager.Create(Request["AwardTitle"]);
+        Response.Redirect("~/");
+    }
+}
+

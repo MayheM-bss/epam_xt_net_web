@@ -1,0 +1,14 @@
+﻿@using task_7._1._2_UI;
+@{
+    if (IsPost)
+    {
+        var id = Request["UserID"];
+        if (Guid.TryParse(id, out Guid guid))
+        {
+            Dependencies.UserManager.DeleteById(guid);
+            Response.Redirect("~/");
+        }
+    }
+}
+
+

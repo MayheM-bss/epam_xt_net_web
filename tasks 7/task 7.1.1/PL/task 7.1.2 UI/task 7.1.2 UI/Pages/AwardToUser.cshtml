@@ -1,0 +1,15 @@
+﻿@using task_7._1._2_UI;
+@{
+    if (IsPost)
+    {
+        var uID = Request["UID"];
+        var aID = Request["AID"];
+        if (Guid.TryParse(uID, out Guid userGuid) &&
+            Guid.TryParse(aID, out Guid awardGuid))
+        {
+            Dependencies.UserManager.AddAward(userGuid, awardGuid);
+            Response.Redirect("~/");
+        }
+    }
+}
+

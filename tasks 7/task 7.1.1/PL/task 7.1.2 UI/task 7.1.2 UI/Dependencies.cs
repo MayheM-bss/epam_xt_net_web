@@ -12,9 +12,5 @@ namespace task_7._1._2_UI
     {
         public  readonly static IUserManager UserManager = DependencyResolver.UserManager;
         public  readonly static IAwardManager AwardManager = DependencyResolver.AwardManager;
-
-        public static List<User> Users { get; private set; } = new List<User>();
-        public static List<Award> Awards { get; private set; } = new List<Award>();
-
     }
 }

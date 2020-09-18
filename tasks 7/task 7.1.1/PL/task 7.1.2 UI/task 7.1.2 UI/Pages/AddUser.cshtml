@@ -1,0 +1,15 @@
+﻿@using task_7._1._2_UI;
+@{
+    if (IsPost)
+    {
+        var name = Request["UserName"];
+        var date = Request["UserBirth"];
+        if (DateTime.TryParse(date, out DateTime BirthDay))
+        {
+            Dependencies.UserManager.Create(name, BirthDay);
+            Response.Redirect("~/");
+        }
+    }
+}
+
+

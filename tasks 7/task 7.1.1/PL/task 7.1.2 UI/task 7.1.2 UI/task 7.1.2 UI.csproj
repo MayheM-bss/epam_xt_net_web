@@ -96,6 +96,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -124,8 +125,13 @@
     <Content Include="Pages\Partial\_deleteUserModal.cshtml" />
     <Content Include="Pages\Partial\_deleteAwardModal.cshtml" />
     <Content Include="Pages\_LayoutModal.cshtml" />
-    <Content Include="Pages\GetUsers.cshtml" />
-    <Content Include="Pages\GetAwards.cshtml" />
+    <Content Include="Pages\Partial\_awardToUser.cshtml" />
+    <Content Include="Pages\Partial\_editUser.cshtml" />
+    <Content Include="Pages\AddUser.cshtml" />
+    <Content Include="Pages\AddAward.cshtml" />
+    <Content Include="Pages\AwardToUser.cshtml" />
+    <Content Include="Pages\DeleteAward.cshtml" />
+    <Content Include="Pages\DeleteUser.cshtml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -217,6 +223,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dependencies.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
