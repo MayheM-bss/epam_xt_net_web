@@ -1,0 +1,26 @@
+﻿@{
+    Layout = "~/Pages/_LayoutModal.cshtml";
+    Page["id"] = "editAward";
+}
+
+<div class="modal-header">
+    <h5 class="modal-title" id="ModalLabel">Редактирование награды</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<form action="~/Pages/EditAward.cshtml" method="post">
+    <div class="modal-body">
+        <label for="EditAwardID">Введите ID награды</label>
+        <input id="EditAwardID" name="EditAwardID" class="form-control" type="text" placeholder="" required pattern="(^[0-9a-zA-Z]{8}-([0-9a-zA-Z]{4}-){3}[0-9a-zA-Z]{12}?$)">
+        <small class="form-text text-muted">
+            Пример ID: @Guid.NewGuid()
+        </small>
+        <label for="NewAwardTitle">Введите новое название</label>
+        <input id="NewAwardTitle" name="NewAwardTitle" class="form-control" type="text" placeholder="" required pattern="^[^\s]+(\s.*)?$">
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-secondary" data-dismiss="modal">Закрыть форму</button>
+        <button type="submit" class="btn btn-primary">Изменить пользователя</button>
+    </div>
+</form>

@@ -1,0 +1,13 @@
+﻿@using task_7._1._2_UI
+@{
+    if (IsPost)
+    {
+        var id = Request["EditAwardID"];
+        var title = Request["NewAwardTitle"];
+        if(Guid.TryParse(id, out Guid guid))
+        {
+            Dependencies.AwardManager.Edit(guid, title);
+            Response.Redirect("~/");
+        }
+    }
+}

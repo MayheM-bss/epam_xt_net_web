@@ -13,5 +13,6 @@ namespace Task7._1._1.BLL.Interfaces
         void Create(string name, DateTime dateOfBirth);
         void DeleteById(Guid id);
         IEnumerable<User> GetAll();
+        void Edit(Guid id, string newName, string newDateOfBirth);
     }
 }

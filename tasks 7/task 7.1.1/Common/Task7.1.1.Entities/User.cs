@@ -31,6 +31,12 @@ namespace Task7._1._1.Entities
             Age = DateTime.Now.DayOfYear > BirthDay.DayOfYear ? DateTime.Now.Year - BirthDay.Year : DateTime.Now.Year - BirthDay.Year - 1;
         }
 
+        public User(string name, DateTime date, Guid id, List<Award> awards) : this(name, date)
+        {
+            ID = id;
+            Awards.AddRange(awards);
+        }
+
         [JsonConstructor]
         public User(Guid id, string name, DateTime date, int age, List<Award> awards)
         {

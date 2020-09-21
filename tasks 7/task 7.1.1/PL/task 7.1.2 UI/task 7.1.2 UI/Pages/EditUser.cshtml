@@ -1,0 +1,15 @@
+﻿@using task_7._1._2_UI
+@{
+    if (IsPost)
+    {
+        var id = Request["EditUserID"];
+        var name = Request["NewUserName"];
+        var birth = Request["NewUserBirth"];
+        if(Guid.TryParse(id, out Guid guid))
+        {
+            Dependencies.UserManager.Edit(guid, name, birth);
+            Response.Redirect("~/");
+        }
+    }
+}
+

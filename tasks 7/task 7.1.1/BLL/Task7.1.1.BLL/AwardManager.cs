@@ -52,5 +52,30 @@ namespace Task7._1._1.BLL
         {
             return _awardDAO.GetAll();
         }
+
+        public void Edit(Guid id, string newTitle)
+        {
+            if (!string.IsNullOrWhiteSpace(newTitle))
+            {
+                Award award = _awardDAO.GetById(id);
+                if(award != null)
+                {
+                    Award newAward = new Award(id, newTitle, award.Users);
+                    _awardDAO.Save(newAward);
+                    foreach (var item in award.Users)
+                    {
+                        var user = _userDAO.GetById(item.ID);
+                        for (int i = 0; i < user.Awards.Count; i++)
+                        {
+                            if (user.Awards[i].ID == award.ID)
+                            {
+                                user.Awards[i] = newAward;
+                            }
+                        }
+                        _userDAO.Save(user);
+                    }
+                }
+            }
+        }
     }
 }
