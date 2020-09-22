@@ -12,7 +12,7 @@ namespace task_7._1._2_UI
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            
+            Dependencies.AccountManager.Create("admin", "admin", "admin");
         }
 
         protected void Session_Start(object sender, EventArgs e)

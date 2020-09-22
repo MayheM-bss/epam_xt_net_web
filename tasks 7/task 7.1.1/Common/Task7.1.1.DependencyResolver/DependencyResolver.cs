@@ -19,6 +19,12 @@ namespace Task7._1._1.DependencyResolver
 
         public static IUserDAO UserDAO => _userDAO;
         public static IUserManager UserManager => _userManager;
+
+        private static readonly IAccountDAO _accountDAO;
+        private static readonly IAccountManager _accountManager;
+
+        public static IAccountDAO AccountDAO => _accountDAO;
+        public static IAccountManager AccountManager => _accountManager;
         static DependencyResolver()
         {
             _awardDAO = new AwardDAO();
@@ -26,6 +32,10 @@ namespace Task7._1._1.DependencyResolver
 
             _userManager = new UserManager(_userDAO, _awardDAO);
             _awardManager = new AwardManager(_userDAO, _awardDAO);
+
+            _accountDAO = new AccountDAO();
+
+            _accountManager = new AccountManager(_accountDAO);
         }
     }
 }

@@ -12,5 +12,6 @@ namespace task_7._1._2_UI
     {
         public  readonly static IUserManager UserManager = DependencyResolver.UserManager;
         public  readonly static IAwardManager AwardManager = DependencyResolver.AwardManager;
+        public readonly static IAccountManager AccountManager = DependencyResolver.AccountManager;
     }
 }

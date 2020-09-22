@@ -1,0 +1,25 @@
+﻿@{
+    Layout = "~/Pages/_LayoutModal.cshtml";
+    Page["id"] = "setRole";
+}
+<div class="modal-header">
+    <h5 class="modal-title" id="ModalLabel">Установить роль</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<form action="~/Pages/SetRole" method="post">
+    <div class="modal-body">
+        <label for="UserLogin">Введите логин пользователя для установки роли</label>
+        <input id="UserLogin" name="UserLogin" class="form-control" type="text" required pattern="^[^\s]+(\s.*)?$">
+        <label for="Role">Выберите роль</label>
+        <select class="form-control" name="Role" id="Role" required>
+            <option value="user">Пользователь</option>
+            <option value="admin">Администратор</option>
+        </select>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-secondary" data-dismiss="modal">Закрыть форму</button>
+        <button type="submit" class="btn btn-primary">Изменить пользователя</button>
+    </div>
+</form>

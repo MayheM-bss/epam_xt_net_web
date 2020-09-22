@@ -135,6 +135,11 @@
     <Content Include="Pages\Partial\_editAward.cshtml" />
     <Content Include="Pages\EditUser.cshtml" />
     <Content Include="Pages\EditAward.cshtml" />
+    <Content Include="Pages\Auth\SignIn.cshtml" />
+    <Content Include="Pages\Auth\SignOut.cshtml" />
+    <Content Include="Pages\Auth\Registration.cshtml" />
+    <Content Include="Pages\Partial\_setRole.cshtml" />
+    <Content Include="Pages\SetRole.cshtml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -229,6 +234,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Task 7 2 1 RoleProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

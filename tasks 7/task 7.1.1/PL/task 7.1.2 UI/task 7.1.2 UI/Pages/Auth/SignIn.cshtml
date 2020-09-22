@@ -1,0 +1,38 @@
+﻿@using task_7._1._2_UI;
+@{
+    Layout = "~/_Layout.cshtml";
+    string error = string.Empty;
+    if (IsPost)
+    {
+        var login = Request["Login"];
+        var password = Request["Password"];
+        if (Dependencies.AccountManager.CanLogin(login, password, out string errorMessage))
+        {
+            FormsAuthentication.SetAuthCookie(login, createPersistentCookie: true);
+            Response.Redirect("/");
+        }
+        else
+        {
+            error = errorMessage;
+        }
+    }
+}
+
+<p class="alert alert-warning">Войдите в аккаунт для использования приложения или зарегистрируйтесь</p>
+@if (!(string.IsNullOrWhiteSpace(error)))
+{
+<p class="alert alert-danger">@error</p>
+}
+<form class ="mb-2 w-50" method="post">
+    <div class="form-group">
+        <label for="Login">Логин</label>
+        <input type="text" name="Login" class="form-control" id="Login" required pattern="^[^\s]+(\s.*)?$">
+    </div>
+    <div class="form-group">
+        <label for="Password">Пароль</label>
+        <input type="password" name="Password" class="form-control" id="Password" required pattern="^[^\s]+(\s.*)?$">
+    </div>
+    <button class="btn btn-primary" type="submit">Войти</button>
+</form>
+<a class="btn btn-primary" href="~/Pages/Auth/Registration.cshtml">Зарегистрироваться</a>
+

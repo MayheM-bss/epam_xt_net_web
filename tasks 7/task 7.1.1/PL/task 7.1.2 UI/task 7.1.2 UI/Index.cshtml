@@ -3,12 +3,22 @@
 @{
     Layout = "~/_Layout.cshtml";
     Page["Title"] = "Index";
+    if (!(User.Identity.IsAuthenticated))
+    {
+        Response.Redirect("~/Pages/Auth/SignIn.cshtml");
+    }
 
 }
-
+@if(User.IsInRole("user") || User.IsInRole("admin"))
+{
 <div class="alert alert-primary" role="alert">
-    Привет, выбери действие
+    Привет, @User.Identity.Name!
 </div>
+<a class="btn btn-primary"href="~/Pages/Auth/SignOut.cshtml">Выйти из аккаунта</a>
+    if(User.IsInRole("admin"))
+    {
+        <div class="my-3"><button class="btn btn-primary" data-toggle="modal" data-target="#setRole" type="button" id="SetRole">Установить роль аккаунту</button></div>
+    }
 <div class="p-3">
     <h5 class="w-100 mb-3">Список пользователей:</h5>
     <div class="mb-3">
@@ -48,6 +58,9 @@
         }
     </div>
 </div>
+}
+@if (User.IsInRole("admin"))
+{
 <div class="mx-3 my-3 fixed-bottom">
     <button type="button" class="btn btn-dark" data-target="#addUser" data-toggle="modal">Добавить пользователя</button>
     <button type="button" class="btn btn-dark" data-target="#addAward" data-toggle="modal">Добавить награду</button>
@@ -64,3 +77,5 @@
 @RenderPage("~/Pages/Partial/_awardToUser.cshtml")
 @RenderPage("~/Pages/Partial/_editUser.cshtml")
 @RenderPage("~/Pages/Partial/_editAward.cshtml")
+@RenderPage("~/Pages/Partial/_setRole.cshtml")
+}

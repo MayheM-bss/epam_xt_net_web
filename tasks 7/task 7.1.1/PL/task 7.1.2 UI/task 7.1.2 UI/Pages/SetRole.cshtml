@@ -1,0 +1,12 @@
+﻿@using task_7._1._2_UI
+@{
+    if (IsPost)
+    {
+        var login = Request["UserLogin"];
+        var role = Request["Role"];
+        Dependencies.AccountManager.SetRole(login, role);
+        Response.Redirect("~/");
+    }
+}
+
+
