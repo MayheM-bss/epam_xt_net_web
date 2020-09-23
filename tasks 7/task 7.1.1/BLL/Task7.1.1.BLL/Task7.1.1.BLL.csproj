@@ -55,6 +55,10 @@
       <Project>{E12D845A-BF03-4B2B-BAF5-42581B6B41E4}</Project>
       <Name>Task7.1.1.DAL.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\SqlDAL\Task 7.2.2.DAL.Interfaces\Task 7.2.2.DAL.Interfaces.csproj">
+      <Project>{ED9CEBD0-5D7D-48EE-9ADC-0F3962DF9236}</Project>
+      <Name>Task 7.2.2.DAL.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Task7.1.1.BLL.Interfaces\Task7.1.1.BLL.Interfaces.csproj">
       <Project>{8CFBB306-09B0-4AB2-B9EF-EAF01FD2B1B9}</Project>
       <Name>Task7.1.1.BLL.Interfaces</Name>

@@ -21,14 +21,18 @@
         $("#DeleteForm").on('submit', function (event) {
             event.preventDefault();
             var form = document.forms.DeleteAward;
-            var users = document.getElementById(form.elements.AwardID.value).textContent;
-            console.log(users);
-            if (users.trim() == "") {
+            if (document.getElementById(form.elements.AwardID.value) === null) {
                 form.submit();
             }
             else {
-                if (confirm("Удалить эту награду у всех пользователей?")) {
+                var users = document.getElementById(form.elements.AwardID.value).textContent;
+                if (users.trim() == "") {
                     form.submit();
+                }
+                else {
+                    if (confirm("Удалить эту награду у всех пользователей?")) {
+                        form.submit();
+                    }
                 }
             }
         })

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Task_7._2._2.DAL.Interfaces;
 using Task7._1._1.BLL.Interfaces;
 using Task7._1._1.DAL.Interfaces;
 using Task7._1._1.Entities;
@@ -10,9 +11,9 @@ namespace Task7._1._1.BLL
 {
     public class AwardManager : IAwardManager
     {
-        private readonly IUserDAO _userDAO;
-        private readonly IAwardDAO _awardDAO;
-        public AwardManager (IUserDAO userDAO, IAwardDAO awardDAO)
+        private readonly IUserSqlDAO _userDAO;
+        private readonly IAwardSqlDAO _awardDAO;
+        public AwardManager (IUserSqlDAO userDAO, IAwardSqlDAO awardDAO)
         {
             _userDAO = userDAO;
             _awardDAO = awardDAO;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Task_7._2._2.DAL.Interfaces;
 using Task7._1._1.BLL.Interfaces;
 using Task7._1._1.DAL.Interfaces;
 using Task7._1._1.Entities;
@@ -11,9 +12,9 @@ namespace Task7._1._1.BLL
 {
     public class AccountManager : IAccountManager
     {
-        private readonly IAccountDAO _accountDAO;
+        private readonly IAccountSqlDAO _accountDAO;
 
-        public AccountManager(IAccountDAO accountDAO)
+        public AccountManager(IAccountSqlDAO accountDAO)
         {
             _accountDAO = accountDAO;
         }
