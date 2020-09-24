@@ -13,7 +13,7 @@ namespace Task7._1._1.BLL
     {
         private readonly IUserSqlDAO _userDAO;
         private readonly IAwardSqlDAO _awardDAO;
-        public AwardManager (IUserSqlDAO userDAO, IAwardSqlDAO awardDAO)
+        public AwardManager(IUserSqlDAO userDAO, IAwardSqlDAO awardDAO)
         {
             _userDAO = userDAO;
             _awardDAO = awardDAO;
@@ -30,7 +30,7 @@ namespace Task7._1._1.BLL
         public void DeleteById(Guid id)
         {
             Award award = _awardDAO.GetById(id);
-            if(award != null)
+            if (award != null)
             {
                 _awardDAO.DeleteById(id);
                 foreach (var item in award.Users)
@@ -59,7 +59,7 @@ namespace Task7._1._1.BLL
             if (!string.IsNullOrWhiteSpace(newTitle))
             {
                 Award award = _awardDAO.GetById(id);
-                if(award != null)
+                if (award != null)
                 {
                     Award newAward = new Award(id, newTitle, award.Users);
                     _awardDAO.Save(newAward);

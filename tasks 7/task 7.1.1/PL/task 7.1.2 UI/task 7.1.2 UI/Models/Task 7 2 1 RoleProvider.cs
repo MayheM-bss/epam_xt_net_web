@@ -11,7 +11,7 @@ namespace task_7._1._2_UI.Models
 
         public override string[] GetRolesForUser(string username)
         {
-            
+
             if (Dependencies.AccountManager.GetRole(username).Equals("admin"))
             {
                 return new string[] { "admin" };
@@ -63,14 +63,14 @@ namespace task_7._1._2_UI.Models
             throw new NotImplementedException();
         }
 
-        
+
 
         public override string[] GetUsersInRole(string roleName)
         {
             throw new NotImplementedException();
         }
 
-       
+
 
         public override void RemoveUsersFromRoles(string[] usernames, string[] roleNames)
         {

@@ -11,13 +11,13 @@
 </div>
 <form action="~/Pages/EditAward.cshtml" method="post">
     <div class="modal-body">
-        <label for="EditAwardID">Введите ID награды</label>
-        <input id="EditAwardID" name="EditAwardID" class="form-control" type="text" placeholder="" required pattern="(^[0-9a-zA-Z]{8}-([0-9a-zA-Z]{4}-){3}[0-9a-zA-Z]{12}?$)">
+        <label for="editAwardID">Введите ID награды</label>
+        <input id="editAwardID" name="editAwardID" class="form-control" type="text" placeholder="" required pattern="(^[0-9a-zA-Z]{8}-([0-9a-zA-Z]{4}-){3}[0-9a-zA-Z]{12}?$)">
         <small class="form-text text-muted">
             Пример ID: @Guid.NewGuid()
         </small>
-        <label for="NewAwardTitle">Введите новое название</label>
-        <input id="NewAwardTitle" name="NewAwardTitle" class="form-control" type="text" placeholder="" required pattern="^[^\s]+(\s.*)?$">
+        <label for="newAwardTitle">Введите новое название</label>
+        <input id="newAwardTitle" name="newAwardTitle" class="form-control" type="text" placeholder="" required pattern="^[^\s]+(\s.*)?$">
     </div>
     <div class="modal-footer">
         <button class="btn btn-secondary" data-dismiss="modal">Закрыть форму</button>

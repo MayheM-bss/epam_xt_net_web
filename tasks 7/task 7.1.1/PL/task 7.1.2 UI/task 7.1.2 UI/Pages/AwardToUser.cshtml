@@ -2,8 +2,8 @@
 @{
     if (IsPost)
     {
-        var uID = Request["UID"];
-        var aID = Request["AID"];
+        var uID = Request["uID"];
+        var aID = Request["aID"];
         if (Guid.TryParse(uID, out Guid userGuid) &&
             Guid.TryParse(aID, out Guid awardGuid))
         {

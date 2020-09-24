@@ -2,9 +2,9 @@
 @{
     if (IsPost)
     {
-        var id = Request["EditUserID"];
-        var name = Request["NewUserName"];
-        var birth = Request["NewUserBirth"];
+        var id = Request["editUserID"];
+        var name = Request["newUserName"];
+        var birth = Request["newUserBirth"];
         if(Guid.TryParse(id, out Guid guid))
         {
             Dependencies.UserManager.Edit(guid, name, birth);

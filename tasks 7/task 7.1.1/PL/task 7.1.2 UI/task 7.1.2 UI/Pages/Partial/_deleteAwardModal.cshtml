@@ -8,17 +8,17 @@
         <span aria-hidden="true">&times;</span>
     </button>
 </div>
-<form action="~/Pages/DeleteAward.cshtml" method="post" id="DeleteForm" name="DeleteAward">
+<form action="~/Pages/DeleteAward.cshtml" method="post" id="deleteForm" name="deleteAward">
     <div class="modal-body">
-        <label for="AwardID">Введите ID награды</label>
-        <input id="AwardID" name="AwardID" class="form-control" type="text" placeholder="" required pattern="(^[0-9a-zA-Z]{8}-([0-9a-zA-Z]{4}-){3}[0-9a-zA-Z]{12}?$)">
+        <label for="awardID">Введите ID награды</label>
+        <input id="awardID" name="awardID" class="form-control" type="text" placeholder="" required pattern="(^[0-9a-zA-Z]{8}-([0-9a-zA-Z]{4}-){3}[0-9a-zA-Z]{12}?$)">
         <small class="form-text text-muted">
             Пример ID: @Guid.NewGuid()
         </small>
     </div>
     <div class="modal-footer">
-        <button  type="reset" class="btn btn-secondary" data-dismiss="modal">Закрыть форму</button>
-        <button  type="submit" class="btn btn-primary">Удалить награду</button>
+        <button type="reset" class="btn btn-secondary" data-dismiss="modal">Закрыть форму</button>
+        <button type="submit" class="btn btn-primary">Удалить награду</button>
     </div>
 </form>
 

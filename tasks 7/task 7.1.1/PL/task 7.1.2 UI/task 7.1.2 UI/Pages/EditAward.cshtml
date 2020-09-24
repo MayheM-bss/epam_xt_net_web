@@ -2,8 +2,8 @@
 @{
     if (IsPost)
     {
-        var id = Request["EditAwardID"];
-        var title = Request["NewAwardTitle"];
+        var id = Request["editAwardID"];
+        var title = Request["newAwardTitle"];
         if(Guid.TryParse(id, out Guid guid))
         {
             Dependencies.AwardManager.Edit(guid, title);

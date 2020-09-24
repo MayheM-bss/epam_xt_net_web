@@ -2,7 +2,7 @@
 @{
     if (IsPost)
     {
-        var id = Request["AwardID"];
+        var id = Request["awardID"];
         if (Guid.TryParse(id, out Guid guid))
         {
             Dependencies.AwardManager.DeleteById(guid);

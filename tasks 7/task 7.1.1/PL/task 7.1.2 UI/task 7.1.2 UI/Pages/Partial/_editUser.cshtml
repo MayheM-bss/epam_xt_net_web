@@ -10,15 +10,15 @@
 </div>
 <form action="~/Pages/EditUser.cshtml" method="post">
     <div class="modal-body">
-        <label for="EditUserID">Введите ID пользователя</label>
-        <input id="EditUserID" name="EditUserID" class="form-control" type="text" placeholder="" required pattern="(^[0-9a-zA-Z]{8}-([0-9a-zA-Z]{4}-){3}[0-9a-zA-Z]{12}?$)">
+        <label for="editUserID">Введите ID пользователя</label>
+        <input id="editUserID" name="editUserID" class="form-control" type="text" placeholder="" required pattern="(^[0-9a-zA-Z]{8}-([0-9a-zA-Z]{4}-){3}[0-9a-zA-Z]{12}?$)">
         <small class="form-text text-muted">
             Пример ID: @Guid.NewGuid()
         </small>
-        <label for="NewUserName">Введите новое имя</label>
-        <input id="NewUserName" name="NewUserName" class="form-control" type="text" placeholder="" pattern="^[^\s]+(\s.*)?$">
-        <label for="NewUserBirth">Введите новую дату рождения</label>
-        <input id="NewUserBirth" name="NewUserBirth" class="form-control" type="date" placeholder="" min="1950-01-01" max="2020-01-01">
+        <label for="newUserName">Введите новое имя</label>
+        <input id="newUserName" name="newUserName" class="form-control" type="text" placeholder="" pattern="^[^\s]+(\s.*)?$">
+        <label for="newUserBirth">Введите новую дату рождения</label>
+        <input id="newUserBirth" name="newUserBirth" class="form-control" type="date" placeholder="" min="1950-01-01" max="2020-01-01">
     </div>
     <div class="modal-footer">
         <button class="btn btn-secondary" data-dismiss="modal">Закрыть форму</button>

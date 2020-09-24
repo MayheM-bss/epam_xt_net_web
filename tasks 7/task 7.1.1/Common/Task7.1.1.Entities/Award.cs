@@ -33,7 +33,6 @@ namespace Task7._1._1.Entities
             ID = id;
             Title = title;
             Users = users;
-           
         }
 
     }

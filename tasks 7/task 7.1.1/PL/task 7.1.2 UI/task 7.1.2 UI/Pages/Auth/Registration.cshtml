@@ -4,8 +4,8 @@
     string error = string.Empty;
     if (IsPost)
     {
-        var login = Request["RegLogin"];
-        var password = Request["RegPassword"];
+        var login = Request["regLogin"];
+        var password = Request["regPassword"];
         if (Dependencies.AccountManager.CanRegister(login))
         {
             Dependencies.AccountManager.Create(login, password);
@@ -23,12 +23,12 @@
 }
 <form class="mb-2 w-50" method="post">
     <div class="form-group">
-        <label for="RegLogin">Логин</label>
-        <input type="text" name="RegLogin" class="form-control" id="RegLogin" required pattern="^[^\s]+(\s.*)?$">
+        <label for="regLogin">Логин</label>
+        <input type="text" name="regLogin" class="form-control" id="regLogin" required pattern="^[^\s]+(\s.*)?$">
     </div>
     <div class="form-group">
-        <label for="RegPassword">Пароль</label>
-        <input type="password" name="RegPassword" class="form-control" id="RegPassword" required pattern="^[^\s]+(\s.*)?$">
+        <label for="regPassword">Пароль</label>
+        <input type="password" name="regPassword" class="form-control" id="regPassword" required pattern="^[^\s]+(\s.*)?$">
     </div>
     <button class="btn btn-primary" type="submit">Зарегистрироваться</button>
 </form>

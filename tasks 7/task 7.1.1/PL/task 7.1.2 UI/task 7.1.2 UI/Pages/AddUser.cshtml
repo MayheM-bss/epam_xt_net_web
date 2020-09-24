@@ -2,8 +2,8 @@
 @{
     if (IsPost)
     {
-        var name = Request["UserName"];
-        var date = Request["UserBirth"];
+        var name = Request["userName"];
+        var date = Request["userBirth"];
         if (DateTime.TryParse(date, out DateTime BirthDay))
         {
             Dependencies.UserManager.Create(name, BirthDay);

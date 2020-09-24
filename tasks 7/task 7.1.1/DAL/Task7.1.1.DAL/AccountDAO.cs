@@ -22,8 +22,8 @@ namespace Task7._1._1.DAL
         public AccountDAO()
         {
             Directory.CreateDirectory(_directory);
-            
         }
+
         public Account GetByLogin(string login)
         {
             FileInfo file = new FileInfo(GetPath(login));

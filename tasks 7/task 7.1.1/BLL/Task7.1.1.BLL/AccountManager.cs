@@ -18,14 +18,15 @@ namespace Task7._1._1.BLL
         {
             _accountDAO = accountDAO;
         }
+
         public bool CanLogin(string login, string password, out string errorMessage)
         {
-            if(!(string.IsNullOrWhiteSpace(login) && string.IsNullOrWhiteSpace(password)))
+            if (!(string.IsNullOrWhiteSpace(login) && string.IsNullOrWhiteSpace(password)))
             {
                 var account = _accountDAO.GetByLogin(login);
-                if(account != null)
+                if (account != null)
                 {
-                    if(account.Password == password)
+                    if (account.Password == password)
                     {
                         errorMessage = string.Empty;
                         return true;
@@ -47,7 +48,6 @@ namespace Task7._1._1.BLL
                 errorMessage = "Поле логин или пароль не было заполнено";
                 return false;
             }
-            
         }
 
         public bool CanRegister(string login)
@@ -57,7 +57,7 @@ namespace Task7._1._1.BLL
 
         public void Create(string login, string password, string role = "user")
         {
-            if(!(string.IsNullOrWhiteSpace(login) && string.IsNullOrWhiteSpace(password)))
+            if (!(string.IsNullOrWhiteSpace(login) && string.IsNullOrWhiteSpace(password)))
             {
                 _accountDAO.Save(new Account(login, password, role));
             }
@@ -66,13 +66,13 @@ namespace Task7._1._1.BLL
         public void SetRole(string login, string role)
         {
             var account = _accountDAO.GetByLogin(login);
-            if(account != null)
+            if (account != null)
             {
                 _accountDAO.Save(new Account(account.Login, account.Password, role));
             }
         }
 
-        public string GetRole (string login)
+        public string GetRole(string login)
         {
             return _accountDAO.GetByLogin(login).Role ?? string.Empty;
         }

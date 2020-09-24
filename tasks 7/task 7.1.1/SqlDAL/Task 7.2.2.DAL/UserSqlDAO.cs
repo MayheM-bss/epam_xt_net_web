@@ -58,7 +58,6 @@ namespace Task_7._2._2.DAL
         public User GetById(Guid id)
         {
             return GetAll().FirstOrDefault(user => id == user.ID);
-
         }
 
         public void Save(User user)

@@ -48,7 +48,7 @@ namespace Task7._1._1.DAL
             {
                 using (var reader = new StreamReader(file.FullName))
                 {
-                    yield return JsonConvert.DeserializeObject<Award>(reader.ReadToEnd(),_settings);
+                    yield return JsonConvert.DeserializeObject<Award>(reader.ReadToEnd(), _settings);
                 }
             }
         }

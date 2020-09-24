@@ -2,7 +2,7 @@
 @{
     if (IsPost)
     {
-        Dependencies.AwardManager.Create(Request["AwardTitle"]);
+        Dependencies.AwardManager.Create(Request["awardTitle"]);
         Response.Redirect("~/");
     }
 }

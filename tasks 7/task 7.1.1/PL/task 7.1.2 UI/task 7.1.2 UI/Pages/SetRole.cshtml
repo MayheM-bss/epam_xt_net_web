@@ -2,8 +2,8 @@
 @{
     if (IsPost)
     {
-        var login = Request["UserLogin"];
-        var role = Request["Role"];
+        var login = Request["userLogin"];
+        var role = Request["role"];
         Dependencies.AccountManager.SetRole(login, role);
         Response.Redirect("~/");
     }

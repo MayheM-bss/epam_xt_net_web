@@ -4,8 +4,8 @@
     string error = string.Empty;
     if (IsPost)
     {
-        var login = Request["Login"];
-        var password = Request["Password"];
+        var login = Request["login"];
+        var password = Request["password"];
         if (Dependencies.AccountManager.CanLogin(login, password, out string errorMessage))
         {
             FormsAuthentication.SetAuthCookie(login, createPersistentCookie: true);
@@ -21,16 +21,16 @@
 <p class="alert alert-warning">Войдите в аккаунт для использования приложения или зарегистрируйтесь</p>
 @if (!(string.IsNullOrWhiteSpace(error)))
 {
-<p class="alert alert-danger">@error</p>
+    <p class="alert alert-danger">@error</p>
 }
-<form class ="mb-2 w-50" method="post">
+<form class="mb-2 w-50" method="post">
     <div class="form-group">
-        <label for="Login">Логин</label>
-        <input type="text" name="Login" class="form-control" id="Login" required pattern="^[^\s]+(\s.*)?$">
+        <label for="login">Логин</label>
+        <input type="text" name="login" class="form-control" id="login" required pattern="^[^\s]+(\s.*)?$">
     </div>
     <div class="form-group">
-        <label for="Password">Пароль</label>
-        <input type="password" name="Password" class="form-control" id="Password" required pattern="^[^\s]+(\s.*)?$">
+        <label for="password">Пароль</label>
+        <input type="password" name="password" class="form-control" id="password" required pattern="^[^\s]+(\s.*)?$">
     </div>
     <button class="btn btn-primary" type="submit">Войти</button>
 </form>

@@ -1,5 +1,4 @@
-﻿@using Task7._1._1.Entities;
-@using task_7._1._2_UI;
+﻿@using task_7._1._2_UI;
 @{
     Layout = "~/_Layout.cshtml";
     Page["Title"] = "Index";
@@ -7,75 +6,76 @@
     {
         Response.Redirect("~/Pages/Auth/SignIn.cshtml");
     }
-
 }
-@if(User.IsInRole("user") || User.IsInRole("admin"))
+
+@if (User.IsInRole("user") || User.IsInRole("admin"))
 {
-<div class="alert alert-primary" role="alert">
-    Привет, @User.Identity.Name!
-</div>
-<a class="btn btn-primary"href="~/Pages/Auth/SignOut.cshtml">Выйти из аккаунта</a>
-    if(User.IsInRole("admin"))
+    <div class="alert alert-primary" role="alert">
+        Привет, @User.Identity.Name!
+    </div>
+    <a class="btn btn-primary" href="~/Pages/Auth/SignOut.cshtml">Выйти из аккаунта</a>
+    if (User.IsInRole("admin"))
     {
-        <div class="my-3"><button class="btn btn-primary" data-toggle="modal" data-target="#setRole" type="button" id="SetRole">Установить роль аккаунту</button></div>
+        <div class="my-3"><button class="btn btn-primary" data-toggle="modal" data-target="#setRole" type="button">Установить роль аккаунту</button></div>
     }
-<div class="p-3">
-    <h5 class="w-100 mb-3">Список пользователей:</h5>
-    <div class="mb-3">
-        @foreach (var item in Dependencies.UserManager.GetAll())
-        {
-            <p class="text-break"><b>Имя пользователя:</b> @item.Name</p>
-            <p><b>ID:</b> @item.ID</p>
-            <p><b>Дата рождения:</b> @item.BirthDay.ToString("dd.MM.yyyy")</p>
-            <p><b>Возраст:</b> @item.Age</p>
-            <p class="text-break">
-                <b>Полученные награды:</b><span>
-                @foreach (var award in item.Awards)
-                {
-                    <text>"</text>@award.Title<text>"</text>
-                }</span>
-            </p>
-            <hr />
-        }
+    <div class="p-3">
+        <h5 class="w-100 mb-3">Список пользователей:</h5>
+        <div class="mb-3">
+            @foreach (var item in Dependencies.UserManager.GetAll())
+            {
+                <p class="text-break"><b>Имя пользователя:</b> @item.Name</p>
+                <p><b>ID:</b> @item.ID</p>
+                <p><b>Дата рождения:</b> @item.BirthDay.ToString("dd.MM.yyyy")</p>
+                <p><b>Возраст:</b> @item.Age</p>
+                <p class="text-break">
+                    <b>Полученные награды:</b><span>
+                        @foreach (var award in item.Awards)
+                        {
+                            <text>"</text>@award.Title<text>"</text>
+                        }
+                    </span>
+                </p>
+                <hr />
+            }
+        </div>
     </div>
-</div>
-<div class="p-3 mb-5">
-    <h5 class="w-100 mb-3">Список наград:</h5>
-    <div class="mb-3">
-        @foreach (var item in Dependencies.AwardManager.GetAll())
-        {
-            <p class="text-break"><b>Название награды:</b> @item.Title</p>
-            <p><b>ID:</b> @item.ID</p>
-            <p class="text-break">
-                <b>Выдана пользователям:</b><span id="@item.ID">
-                    @foreach (var user in item.Users)
-                    {
-                        <text>"</text>@user.Name<text>"</text>
-                    }
-                </span>
-            </p>
-            <hr />
-        }
+    <div class="p-3 mb-5">
+        <h5 class="w-100 mb-3">Список наград:</h5>
+        <div class="mb-3">
+            @foreach (var item in Dependencies.AwardManager.GetAll())
+            {
+                <p class="text-break"><b>Название награды:</b> @item.Title</p>
+                <p><b>ID:</b> @item.ID</p>
+                <p class="text-break">
+                    <b>Выдана пользователям:</b><span id="@item.ID">
+                        @foreach (var user in item.Users)
+                        {
+                            <text>"</text>@user.Name<text>"</text>
+                        }
+                    </span>
+                </p>
+                <hr />
+            }
+        </div>
     </div>
-</div>
 }
 @if (User.IsInRole("admin"))
 {
-<div class="mx-3 my-3 fixed-bottom">
-    <button type="button" class="btn btn-dark" data-target="#addUser" data-toggle="modal">Добавить пользователя</button>
-    <button type="button" class="btn btn-dark" data-target="#addAward" data-toggle="modal">Добавить награду</button>
-    <button type="button" class="btn btn-dark" data-target="#deleteUser" data-toggle="modal">Удалить пользователя</button>
-    <button type="button" class="btn btn-dark" data-target="#deleteAward" data-toggle="modal">Удалить награду</button>
-    <button type="button" class="btn btn-dark" data-target="#awardToUser" data-toggle="modal">Наградить пользователя</button>
-    <button type="button" class="btn btn-dark" data-target="#editUser" data-toggle="modal">Редактировать пользователя</button>
-    <button type="button" class="btn btn-dark" data-target="#editAward" data-toggle="modal">Редактировать награду</button>
-</div>
-@RenderPage("~/Pages/Partial/_addUserModal.cshtml")
-@RenderPage("~/Pages/Partial/_addAwardModal.cshtml")
-@RenderPage("~/Pages/Partial/_deleteUserModal.cshtml")
-@RenderPage("~/Pages/Partial/_deleteAwardModal.cshtml")
-@RenderPage("~/Pages/Partial/_awardToUser.cshtml")
-@RenderPage("~/Pages/Partial/_editUser.cshtml")
-@RenderPage("~/Pages/Partial/_editAward.cshtml")
-@RenderPage("~/Pages/Partial/_setRole.cshtml")
+    <div class="mx-3 my-3 fixed-bottom">
+        <button type="button" class="btn btn-dark" data-target="#addUser" data-toggle="modal">Добавить пользователя</button>
+        <button type="button" class="btn btn-dark" data-target="#addAward" data-toggle="modal">Добавить награду</button>
+        <button type="button" class="btn btn-dark" data-target="#deleteUser" data-toggle="modal">Удалить пользователя</button>
+        <button type="button" class="btn btn-dark" data-target="#deleteAward" data-toggle="modal">Удалить награду</button>
+        <button type="button" class="btn btn-dark" data-target="#awardToUser" data-toggle="modal">Наградить пользователя</button>
+        <button type="button" class="btn btn-dark" data-target="#editUser" data-toggle="modal">Редактировать пользователя</button>
+        <button type="button" class="btn btn-dark" data-target="#editAward" data-toggle="modal">Редактировать награду</button>
+    </div>
+    @RenderPage("~/Pages/Partial/_addUserModal.cshtml")
+    @RenderPage("~/Pages/Partial/_addAwardModal.cshtml")
+    @RenderPage("~/Pages/Partial/_deleteUserModal.cshtml")
+    @RenderPage("~/Pages/Partial/_deleteAwardModal.cshtml")
+    @RenderPage("~/Pages/Partial/_awardToUser.cshtml")
+    @RenderPage("~/Pages/Partial/_editUser.cshtml")
+    @RenderPage("~/Pages/Partial/_editAward.cshtml")
+    @RenderPage("~/Pages/Partial/_setRole.cshtml")
 }

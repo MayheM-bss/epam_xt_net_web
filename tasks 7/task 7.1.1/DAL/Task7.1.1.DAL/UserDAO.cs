@@ -15,11 +15,11 @@ namespace Task7._1._1.DAL
     public class UserDAO : IUserDAO
     {
         private static readonly string _directory = WebConfigurationManager.AppSettings.Get("pathToUserJSON");
-        private static readonly JsonSerializerSettings _settings = new JsonSerializerSettings 
-            {
-                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
-                    DateFormatString = "dd.MM.yyyy"
-            };
+        private static readonly JsonSerializerSettings _settings = new JsonSerializerSettings
+        {
+            ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+            DateFormatString = "dd.MM.yyyy"
+        };
         public UserDAO()
         {
             Directory.CreateDirectory(_directory);
@@ -27,7 +27,6 @@ namespace Task7._1._1.DAL
 
         public void Save(User user)
         {
-
             var json = JsonConvert.SerializeObject(user, Formatting.Indented, _settings);
 
             using (var writer = new StreamWriter(GetPath(user.ID), false))
@@ -56,7 +55,7 @@ namespace Task7._1._1.DAL
 
         public IEnumerable<User> GetAll()
         {
-            foreach(var file in new DirectoryInfo(_directory).GetFiles())
+            foreach (var file in new DirectoryInfo(_directory).GetFiles())
             {
                 using (var reader = new StreamReader(file.FullName))
                 {

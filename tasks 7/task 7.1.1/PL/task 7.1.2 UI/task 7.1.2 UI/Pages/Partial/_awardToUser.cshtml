@@ -1,6 +1,6 @@
 ﻿@{
     Layout = "~/Pages/_LayoutModal.cshtml";
-    Page["id"] = "awardToUser"; 
+    Page["id"] = "awardToUser";
 }
 
 <div class="modal-header">
@@ -11,13 +11,13 @@
 </div>
 <form action="~/Pages/AwardToUser.cshtml" method="post">
     <div class="modal-body">
-        <label for="UID">Введите ID пользователя</label>
-        <input id="UID" name="UID" class="form-control" type="text" placeholder="" required pattern="(^[0-9a-zA-Z]{8}-([0-9a-zA-Z]{4}-){3}[0-9a-zA-Z]{12}?$)">
+        <label for="uID">Введите ID пользователя</label>
+        <input id="uID" name="uID" class="form-control" type="text" placeholder="" required pattern="(^[0-9a-zA-Z]{8}-([0-9a-zA-Z]{4}-){3}[0-9a-zA-Z]{12}?$)">
         <small class="form-text text-muted">
             Пример ID: @Guid.NewGuid()
         </small>
-        <label for="AID">Введите ID награды</label>
-        <input id="AID" name="AID" class="form-control" type="text" placeholder="" required pattern="(^[0-9a-zA-Z]{8}-([0-9a-zA-Z]{4}-){3}[0-9a-zA-Z]{12}?$)">
+        <label for="aID">Введите ID награды</label>
+        <input id="aID" name="aID" class="form-control" type="text" placeholder="" required pattern="(^[0-9a-zA-Z]{8}-([0-9a-zA-Z]{4}-){3}[0-9a-zA-Z]{12}?$)">
         <small class="form-text text-muted">
             Пример ID: @Guid.NewGuid()
         </small>

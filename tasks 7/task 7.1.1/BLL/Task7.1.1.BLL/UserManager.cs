@@ -19,12 +19,12 @@ namespace Task7._1._1.BLL
             _userDAO = userDAO;
             _awardDAO = awardDAO;
         }
-            
+
         public void AddAward(Guid userId, Guid awardId)
         {
             User user = _userDAO.GetById(userId);
             Award award = _awardDAO.GetById(awardId);
-            if(user != null && award != null)
+            if (user != null && award != null)
             {
                 user.Awards.Add(award);
                 award.Users.Add(user);
@@ -70,10 +70,10 @@ namespace Task7._1._1.BLL
 
         public void Edit(Guid id, string newName, string newDateOfBirth)
         {
-            if(!(string.IsNullOrWhiteSpace(newName) && string.IsNullOrWhiteSpace(newDateOfBirth)))
+            if (!(string.IsNullOrWhiteSpace(newName) && string.IsNullOrWhiteSpace(newDateOfBirth)))
             {
                 User user = _userDAO.GetById(id);
-                if(user != null)
+                if (user != null)
                 {
                     DateTime.TryParse(newDateOfBirth, out DateTime dateTime);
                     User newUser;
@@ -82,7 +82,7 @@ namespace Task7._1._1.BLL
                         newUser = new User(user.Name, dateTime, id, user.Awards);
                         _userDAO.Save(newUser);
                     }
-                    if(newDateOfBirth == "")
+                    if (newDateOfBirth == "")
                     {
                         newUser = new User(newName, user.BirthDay, id, user.Awards);
                         _userDAO.Save(newUser);
@@ -97,7 +97,7 @@ namespace Task7._1._1.BLL
                         var award = _awardDAO.GetById(item.ID);
                         for (int i = 0; i < award.Users.Count; i++)
                         {
-                            if(award.Users[i].ID == user.ID)
+                            if (award.Users[i].ID == user.ID)
                             {
                                 award.Users[i] = newUser;
                             }

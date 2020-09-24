@@ -1,5 +1,4 @@
-﻿  
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html>
 <head>
@@ -18,14 +17,14 @@
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/popper.min.js"></script>
     <script type="text/javascript">
-        $("#DeleteForm").on('submit', function (event) {
+        $("#deleteForm").on('submit', function (event) {
             event.preventDefault();
-            var form = document.forms.DeleteAward;
-            if (document.getElementById(form.elements.AwardID.value) === null) {
+            var form = document.forms.deleteAward;
+            if (document.getElementById(form.elements.awardID.value) === null) {
                 form.submit();
             }
             else {
-                var users = document.getElementById(form.elements.AwardID.value).textContent;
+                var users = document.getElementById(form.elements.awardID.value).textContent;
                 if (users.trim() == "") {
                     form.submit();
                 }

@@ -2,7 +2,7 @@
 @{
     if (IsPost)
     {
-        var id = Request["UserID"];
+        var id = Request["userID"];
         if (Guid.TryParse(id, out Guid guid))
         {
             Dependencies.UserManager.DeleteById(guid);
